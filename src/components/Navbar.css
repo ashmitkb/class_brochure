@@ -26,11 +26,11 @@
      render backdrop-filter at all, leaving only whatever the background
      itself provides. A faint ~10% tint was invisible in that case; this
      is opaque enough to read as a deliberate panel either way. */
-  background: linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.26));
+  background: linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.1));
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.38);
-  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.28);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
