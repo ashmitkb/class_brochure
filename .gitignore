@@ -12,6 +12,21 @@ dist
 dist-ssr
 *.local
 
+# Raw intake zips (Google Form resume/photo submissions) — these hold
+# every student's full resume and headshot, unfiltered, which is more
+# personal data than what actually gets curated into students.js and the
+# per-student PDFs in public/resumes/. No reason for these to live in git
+# history, especially on a public repo.
+resume.zip
+pictures.zip
+*.zip
+
+# Firebase config — points at a specific project's API keys; not secret,
+# but no reason for it to live in git either.
+.env
+.env.local
+.env.*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

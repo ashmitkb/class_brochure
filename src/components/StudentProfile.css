@@ -1,0 +1,544 @@
+.profile-page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+/* Slim, purpose-built top bar — replaces the floating glass navbar on this
+   view so nothing ever overlaps the profile content. It's sticky and the
+   page below is laid out to start right after it, so there's no z-index
+   fight to get wrong. */
+.profile-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 16px;
+  background: rgba(238, 244, 237, 0.88);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(11, 37, 69, 0.1);
+}
+
+.profile-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.profile-back:hover { background: rgba(11, 37, 69, 0.06); }
+
+.profile-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-topbar-class {
+  font-size: 11px;
+  color: var(--text-ink-lo);
+  display: none;
+}
+
+.profile-edit-trigger {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(11, 37, 69, 0.06);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-edit-trigger:hover {
+  background: var(--signal);
+  color: var(--text-hi);
+}
+
+.profile-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Sidebar — sticky beneath the top bar, its own scroll if the nav list
+   ever grows taller than the viewport. */
+.profile-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 40px 28px 40px;
+  background: var(--ink);
+  color: var(--text-hi);
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-identity {
+  text-align: center;
+  padding-bottom: 28px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(238, 244, 237, 0.12);
+}
+
+/* A bigger box, not a circle — a circular crop was clipping people's
+   faces/shoulders depending on how their photo was framed. object-position
+   is pinned toward the top so a headshot's face stays in frame even when
+   the source photo is a looser crop. */
+.profile-photo-box {
+  width: 190px;
+  height: 235px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 auto 18px;
+  border: 3px solid rgba(238, 244, 237, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.profile-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.profile-name {
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.profile-tagline {
+  font-size: 13.5px;
+  color: var(--signal);
+  font-family: var(--font-mono);
+}
+
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.profile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(238, 244, 237, 0.6);
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-nav-link:hover {
+  color: var(--text-hi);
+  background: rgba(238, 244, 237, 0.06);
+}
+
+.profile-nav-link.active {
+  color: var(--text-hi);
+  background: rgba(176, 141, 69, 0.18);
+}
+
+.profile-nav-link.active svg { color: var(--signal); }
+
+.profile-sidebar-footer {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(238, 244, 237, 0.12);
+}
+
+.profile-sidebar-footer .mono {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: rgba(238, 244, 237, 0.45);
+}
+
+/* Main content column */
+.profile-main {
+  flex: 1;
+  min-width: 0;
+  padding: 48px clamp(24px, 5vw, 72px) 120px;
+  max-width: 880px;
+}
+
+.profile-main-wide { max-width: none; }
+
+.profile-section {
+  margin-bottom: 44px;
+  scroll-margin-top: 84px;
+}
+
+/* Profile Summary / Resume tabs */
+.profile-view-tabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid rgba(11, 37, 69, 0.1);
+  margin-bottom: 36px;
+}
+
+.profile-view-tab {
+  padding: 4px 2px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-ink-lo);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-view-tab:hover { color: var(--ink); }
+
+.profile-view-tab.active {
+  color: var(--accent-blue);
+  border-bottom-color: var(--accent-blue);
+}
+
+.profile-resume-view { margin-bottom: 44px; }
+
+.profile-resume-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.profile-resume-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-ink-lo);
+}
+
+.profile-resume-download {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--text-hi);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.profile-resume-download:hover { background: var(--ink-soft); }
+
+/* The actual rendered PDF pages (see ResumeViewer.jsx) — a plain white
+   card with the page images stacked inside, no browser PDF-viewer
+   chrome, so it reads like a real document sitting on the page instead
+   of an embedded file. */
+.resume-viewer {
+  border-radius: 16px;
+  border: 1px solid rgba(11, 37, 69, 0.1);
+  box-shadow: 0 6px 22px rgba(11, 37, 69, 0.05);
+  background: var(--paper-card);
+  padding: clamp(16px, 3vw, 32px);
+}
+
+.resume-viewer-status {
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-ink-lo);
+}
+
+.resume-viewer-status-error { color: #b23b3b; }
+
+.resume-viewer-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.resume-viewer-page {
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 2px 14px rgba(11, 37, 69, 0.14);
+  max-width: 100%;
+}
+
+.profile-resume-fallback {
+  font-size: 12.5px;
+  color: var(--text-ink-lo);
+  margin-top: 12px;
+}
+
+.profile-resume-fallback a {
+  color: var(--accent-blue);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.profile-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-ink-lo);
+  margin-bottom: 14px;
+}
+
+.profile-card {
+  background: var(--paper-card);
+  border: 1px solid rgba(11, 37, 69, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 6px 22px rgba(11, 37, 69, 0.05);
+}
+
+.profile-bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2b323d;
+}
+
+.profile-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.profile-card-label {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.profile-tags span {
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(19, 64, 116, 0.1);
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
+}
+
+.profile-tags span.alt {
+  background: rgba(176, 141, 69, 0.14);
+  color: #8a6d2f;
+}
+
+.profile-timeline-item {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.profile-timeline-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(11, 37, 69, 0.14);
+}
+
+.profile-timeline-item:last-child { padding-bottom: 0; }
+
+.profile-timeline-dot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--signal);
+  margin-top: 6px;
+}
+
+.profile-timeline-title {
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-bottom: 3px;
+}
+
+.profile-timeline-sub {
+  font-size: 13px;
+  color: var(--text-ink-lo);
+}
+
+.profile-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-project { padding: 22px 24px; }
+.profile-project-title { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+.profile-project-desc { font-size: 14px; color: var(--text-ink-lo); line-height: 1.6; }
+
+.profile-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.profile-cert-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-cert-list li {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #2b323d;
+}
+
+.profile-contact-card,
+.profile-contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.profile-contact-empty {
+  font-size: 14px;
+  color: var(--text-ink-lo);
+}
+
+.profile-contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.profile-contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.profile-contact-form input,
+.profile-contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 37, 69, 0.14);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.profile-contact-form input:focus,
+.profile-contact-form textarea:focus {
+  outline: none;
+  border-color: var(--signal);
+  box-shadow: 0 0 0 3px rgba(176, 141, 69, 0.15);
+}
+
+/* MailChooser (Gmail/Outlook/Yahoo/default picker) renders its own
+   button styling — this just makes its wrapper stretch to the form's
+   full width the way the old plain submit button did. */
+.profile-contact-send-wrap { display: flex; }
+
+.profile-contact-form-note {
+  font-size: 12px;
+  color: var(--text-ink-lo);
+  line-height: 1.5;
+  margin-top: -4px;
+}
+
+.profile-contact-channels {
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .profile-topbar-class { display: block; }
+}
+
+/* Below this, the sticky two-column layout collapses: sidebar becomes a
+   normal-flow header block and the nav turns into a horizontal scroller,
+   so the back button in the top bar stays the one durable way out on
+   small screens. */
+@media (max-width: 860px) {
+  .profile-body { flex-direction: column; }
+
+  .profile-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 28px 20px;
+  }
+
+  .profile-identity { padding-bottom: 20px; margin-bottom: 16px; }
+  .profile-photo-box { width: 128px; height: 158px; margin-bottom: 14px; }
+
+  .profile-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+
+  .profile-nav-link { flex-shrink: 0; padding: 9px 12px; }
+  .profile-sidebar-footer { display: none; }
+
+  .profile-main { padding: 32px 20px 90px; max-width: none; }
+  .profile-skills-grid { grid-template-columns: 1fr; gap: 22px; }
+  .profile-contact-grid { grid-template-columns: 1fr; }
+
+  .profile-view-tabs { gap: 20px; margin-bottom: 24px; }
+  .profile-view-tab { font-size: 14px; }
+  .profile-resume-toolbar { align-items: flex-start; }
+  .profile-resume-download { width: 100%; justify-content: center; }
+  .resume-viewer { padding: 12px; }
+}

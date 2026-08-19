@@ -17,14 +17,18 @@ export default function AboutCohort() {
       skillCounts[sk] = (skillCounts[sk] || 0) + 1
     })
   })
-  const topSkill = Object.entries(skillCounts).sort((a, b) => b[1] - a[1])[0]
+  // A single "N students know X" stat reads as an oddly specific/random
+  // fact depending on which skill happens to be most common in a given
+  // batch of data — the breadth of the class's skillset as a whole is a
+  // steadier, more generally-true thing to lead with.
+  const uniqueSkillCount = Object.keys(skillCounts).length
 
   const projectCount = students.reduce((sum, s) => sum + (s.projects?.length || 0), 0)
   const certCount = students.reduce((sum, s) => sum + (s.certifications?.length || 0), 0)
 
   const stats = [
     { num: total, label: 'students, verified profiles' },
-    { num: topSkill ? topSkill[1] : 0, label: topSkill ? `students know ${topSkill[0]}` : 'top skill' },
+    { num: uniqueSkillCount, label: 'technical skills across the class' },
     { num: projectCount, label: 'projects documented' },
     { num: certCount, label: 'certifications earned' },
   ]
@@ -38,7 +42,7 @@ export default function AboutCohort() {
         viewport={{ once: true, margin: '-100px' }}
         variants={fadeUp}
       >
-        01 / ABOUT THE CLASS
+        02 / ABOUT THE CLASS
       </motion.p>
 
       <motion.h2

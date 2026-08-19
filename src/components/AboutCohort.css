@@ -65,4 +65,10 @@
 @media (max-width: 640px) {
   .cohort-section { padding: 80px 6vw 60px; }
   .cohort-stat-row { gap: 32px; }
+  .cohort-meta-row { gap: 24px; margin-bottom: 36px; }
+}
+
+@media (max-width: 420px) {
+  .cohort-stat-row { gap: 24px 32px; }
+  .cohort-stat { min-width: 40%; }
 }

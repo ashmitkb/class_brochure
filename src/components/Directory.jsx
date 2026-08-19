@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search } from 'lucide-react'
+import { Search, Star } from 'lucide-react'
 import { students } from '../data/students'
-import ProfileDrawer from './ProfileDrawer'
+import { withOverridesList } from '../utils/studentOverrides'
+import { useOverrides } from '../context/OverridesContext'
+import { useFavorites } from '../utils/favorites'
 import './Directory.css'
 
 // Build filter chips from whatever skills actually show up most in the
@@ -16,16 +18,28 @@ function topSkillFilters(list, count = 5) {
     .map(([skill]) => skill)
 }
 
-export default function Directory() {
+export default function Directory({ onSelectStudent }) {
   const [query, setQuery] = useState('')
   const [activeSkill, setActiveSkill] = useState('all')
-  const [activeStudent, setActiveStudent] = useState(null)
+  const [favoritesOnly, setFavoritesOnly] = useState(false)
 
-  const filters = useMemo(() => ['all', ...topSkillFilters(students)], [])
+  // Live map of { studentId: editedFields } from Firestore (see
+  // OverridesContext) — layered on top of the base data so a self-edit
+  // shows up in the grid for every visitor, in real time, without a
+  // reload.
+  const overrides = useOverrides()
+  const roster = useMemo(() => withOverridesList(students, overrides), [overrides])
+
+  // Starring is a personal browsing aid (browser-local, see
+  // utils/favorites.js) — not synced anywhere, unlike the overrides above.
+  const { favorites, toggleFavorite } = useFavorites()
+
+  const filters = useMemo(() => ['all', ...topSkillFilters(roster)], [roster])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    return students.filter((s) => {
+    return roster.filter((s) => {
+      if (favoritesOnly && !favorites.has(s.id)) return false
       const matchesSkill = activeSkill === 'all' || s.technicalSkills.includes(activeSkill)
       if (!matchesSkill) return false
       if (!q) return true
@@ -33,11 +47,11 @@ export default function Directory() {
         .join(' ').toLowerCase()
       return haystack.includes(q)
     })
-  }, [query, activeSkill])
+  }, [query, activeSkill, roster, favoritesOnly, favorites])
 
   return (
     <section className="directory-section" id="directory">
-      <p className="mono cohort-eyebrow directory-eyebrow">02 / MEET THE CLASS</p>
+      <p className="mono cohort-eyebrow directory-eyebrow">03 / MEET THE CLASS</p>
       <h2 className="directory-heading">Search by name, skill, or interest.</h2>
 
       <div className="directory-search-row">
@@ -52,6 +66,17 @@ export default function Directory() {
         </div>
 
         <div className="directory-filters">
+          <motion.button
+            className={`directory-pill directory-pill-favorites ${favoritesOnly ? 'active' : ''}`}
+            onClick={() => setFavoritesOnly((v) => !v)}
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ duration: 0.15 }}
+          >
+            <Star size={13} fill={favoritesOnly ? 'currentColor' : 'none'} />
+            Favorites{favorites.size > 0 ? ` (${favorites.size})` : ''}
+          </motion.button>
+
           {filters.map((f) => (
             <motion.button
               key={f}
@@ -82,8 +107,18 @@ export default function Directory() {
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.985 }}
               transition={{ duration: 0.35, delay: Math.min(i * 0.035, 0.3), ease: [0.22, 1, 0.36, 1] }}
-              onClick={() => setActiveStudent(s)}
+              onClick={() => onSelectStudent(s)}
             >
+              <button
+                type="button"
+                className={`student-card-star ${favorites.has(s.id) ? 'active' : ''}`}
+                onClick={(e) => { e.stopPropagation(); toggleFavorite(s.id) }}
+                aria-label={favorites.has(s.id) ? `Remove ${s.name} from favorites` : `Add ${s.name} to favorites`}
+                aria-pressed={favorites.has(s.id)}
+              >
+                <Star size={16} fill={favorites.has(s.id) ? 'currentColor' : 'none'} />
+              </button>
+
               <div className="student-card-photo">
                 <img src={s.photo} alt={s.name} loading="lazy" />
               </div>
@@ -97,11 +132,12 @@ export default function Directory() {
         </AnimatePresence>
       </div>
 
-      {filtered.length === 0 && (
+      {filtered.length === 0 && favoritesOnly && (
+        <p className="directory-empty">No favorites yet — click the star on a card to shortlist someone.</p>
+      )}
+      {filtered.length === 0 && !favoritesOnly && (
         <p className="directory-empty">No one matches that search yet — try a different skill or name.</p>
       )}
-
-      <ProfileDrawer student={activeStudent} onClose={() => setActiveStudent(null)} />
     </section>
   )
 }

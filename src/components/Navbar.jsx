@@ -6,6 +6,7 @@ import './Navbar.css'
 
 const links = [
   { label: 'Home', href: '#top' },
+  { label: 'Program', href: '#programme' },
   { label: 'Students', href: '#directory' },
   { label: 'Stats', href: '#stats' },
   { label: 'Contact', href: '#footer' },
@@ -40,9 +41,16 @@ export default function Navbar() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <a href="#top" className="glass-nav-brand">
-            <img src="/logo.png" alt="Christ University" className="glass-nav-logo" />
+            {/* import.meta.env.BASE_URL, not a hardcoded "/", so this still
+                resolves once vite.config.js sets a base path for GitHub
+                Pages (a plain "/christ-logo.png" 404s under a project-page
+                base like /class_brochure/). */}
+            <img
+              src={`${import.meta.env.BASE_URL}christ-logo.png`}
+              alt="Christ University"
+              className="glass-nav-logo"
+            />
             <span className="glass-nav-brand-text">
-              <span className="glass-nav-brand-title">{classInfo.name}</span>
               <span className="mono glass-nav-brand-sub">BATCH {classInfo.batch}</span>
             </span>
           </a>

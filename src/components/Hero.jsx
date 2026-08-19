@@ -14,10 +14,17 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className="hero">
-      {/* Drop the background photo in as public/hero-background.jpg — this
-          div is just the dark image layer; the gradient on top of it
-          (.hero-overlay) is what keeps the headline readable over any photo. */}
-      <div className="hero-bg" style={{ backgroundImage: "url('/hero-background.jpg')" }} />
+      {/* public/christ-campus-photo.JPG — the dark image layer; the gradient
+          on top of it (.hero-overlay) is what keeps the headline readable.
+          Built from import.meta.env.BASE_URL rather than a hardcoded "/" —
+          with vite.config.js's base set for GitHub Pages, a plain
+          "/christ-campus-photo.JPG" 404s because the site is served from
+          /class_brochure/, not the domain root. This was the actual cause
+          of the background not showing up. */}
+      <div
+        className="hero-bg"
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}christ-campus-photo.JPG')` }}
+      />
       <div className="hero-overlay" />
 
       <div className="hero-content">

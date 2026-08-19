@@ -1,38 +1,84 @@
 .site-footer {
-  background: var(--ink);
-  color: var(--text-hi);
-  padding: 60px 8vw;
+  background: var(--paper);
+  padding: 70px 8vw 32px;
 }
 
-.footer-inner {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 44px;
+}
+
+.footer-address h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.footer-address-line {
+  font-size: 13.5px;
+  color: var(--text-ink-lo);
+  line-height: 1.6;
+}
+
+.footer-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+.footer-contact-col {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  padding-top: 40px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-eyebrow {
-  font-size: 11px;
-  color: var(--accent-light);
-  margin-bottom: 10px;
+.footer-contact-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
 }
 
-.site-footer h3 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.footer-sub {
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
-  color: var(--text-lo);
+  color: var(--text-ink-lo);
 }
 
-.footer-contact {
-  font-size: 14px;
-  color: var(--accent-light);
-  border-bottom: 1px solid rgba(242,183,5,0.4);
-  padding-bottom: 2px;
+.footer-contact-row svg { color: var(--accent-blue); flex-shrink: 0; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(11, 37, 69, 0.1);
+  padding-top: 26px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12.5px;
+  color: var(--text-ink-lo);
+}
+
+.footer-credit {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.footer-credit span { font-weight: 600; color: var(--ink); }
+
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+}
+
+@media (max-width: 560px) {
+  .site-footer { padding: 56px 6vw 26px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
