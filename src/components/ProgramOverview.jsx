@@ -54,8 +54,8 @@ export default function ProgramOverview() {
           variants={fadeUp}
         >
           <h2 className="program-heading">
-            A four-year BCA built for
-            <br className="program-heading-break" /> where software is actually going.
+            A four-year Bachelor of Computer Applications,
+            <br className="program-heading-break" /> built for the future of software.
           </h2>
           <p className="program-body">
             Bachelor of Computer Applications (Honours) at CHRIST (Deemed to be University),

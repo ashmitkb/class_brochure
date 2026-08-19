@@ -52,8 +52,8 @@ export default function AboutCohort() {
         viewport={{ once: true, margin: '-100px' }}
         variants={fadeUp}
       >
-        One BCA section, four years,
-        <br className="cohort-heading-break" /> way too many group projects.
+        One cohort, four years —
+        <br className="cohort-heading-break" /> captured in skills, projects, and certifications.
       </motion.h2>
 
       <div className="cohort-meta-row">

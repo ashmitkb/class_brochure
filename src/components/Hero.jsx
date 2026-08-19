@@ -39,11 +39,11 @@ export default function Hero() {
         </motion.span>
 
         <motion.h1 custom={1} initial="hidden" animate="show" variants={fadeUp}>
-          4th Year BCA.
+          Bachelor of
           <br />
-          Batch 2023
+          Computer Applications.
           <br />
-          <span className="hero-headline-accent">to 2027.</span>
+          <span className="hero-headline-accent">Class of 2027.</span>
         </motion.h1>
 
         <motion.p

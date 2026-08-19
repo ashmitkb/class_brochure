@@ -34,51 +34,58 @@ export default function Navbar() {
           y-slide-in below, which would otherwise clobber a CSS translateX
           center and silently knock the bar off-center. */}
       <div className="glass-nav-wrap">
-        <motion.header
-          className={`glass-nav ${scrolled ? 'scrolled' : ''}`}
+        {/* The slide-in transform lives on this wrapper, not on .glass-nav
+            itself — Chrome/Edge have a long-standing bug where an element
+            carrying both `transform` and `backdrop-filter` at once fails to
+            render the blur at all (it did here: the bar was fully see-
+            through with sharp, unblurred text behind it). Keeping the
+            blurred element untransformed sidesteps it. */}
+        <motion.div
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <a href="#top" className="glass-nav-brand">
-            {/* import.meta.env.BASE_URL, not a hardcoded "/", so this still
-                resolves once vite.config.js sets a base path for GitHub
-                Pages (a plain "/christ-logo.png" 404s under a project-page
-                base like /class_brochure/). */}
-            <img
-              src={`${import.meta.env.BASE_URL}christ-logo.png`}
-              alt="Christ University"
-              className="glass-nav-logo"
-            />
-            <span className="glass-nav-brand-text">
-              <span className="mono glass-nav-brand-sub">BATCH {classInfo.batch}</span>
-            </span>
-          </a>
+          <header className={`glass-nav ${scrolled ? 'scrolled' : ''}`}>
+            <a href="#top" className="glass-nav-brand">
+              {/* import.meta.env.BASE_URL, not a hardcoded "/", so this still
+                  resolves once vite.config.js sets a base path for GitHub
+                  Pages (a plain "/christ-logo.png" 404s under a project-page
+                  base like /class_brochure/). */}
+              <img
+                src={`${import.meta.env.BASE_URL}christ-logo.png`}
+                alt="Christ University"
+                className="glass-nav-logo"
+              />
+              <span className="glass-nav-brand-text">
+                <span className="mono glass-nav-brand-sub">BATCH {classInfo.batch}</span>
+              </span>
+            </a>
 
-          <nav className="glass-nav-links">
-            {links.map((l) => (
-              <a key={l.label} href={l.href}>{l.label}</a>
-            ))}
-          </nav>
+            <nav className="glass-nav-links">
+              {links.map((l) => (
+                <a key={l.label} href={l.href}>{l.label}</a>
+              ))}
+            </nav>
 
-          <motion.a
-            href="#directory"
-            className="glass-nav-cta"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ duration: 0.15 }}
-          >
-            Meet the Class
-          </motion.a>
+            <motion.a
+              href="#directory"
+              className="glass-nav-cta"
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ duration: 0.15 }}
+            >
+              Meet the Class
+            </motion.a>
 
-          <button
-            className="glass-nav-burger"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu size={20} />
-          </button>
-        </motion.header>
+            <button
+              className="glass-nav-burger"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={20} />
+            </button>
+          </header>
+        </motion.div>
       </div>
 
       <AnimatePresence>

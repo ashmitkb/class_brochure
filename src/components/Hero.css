@@ -35,8 +35,14 @@
 .hero-eyebrow {
   display: inline-block;
   font-size: 12px;
-  color: var(--signal);
+  color: #d9bd7d;
+  letter-spacing: 0.12em;
   margin-bottom: 20px;
+  /* The photo behind this varies a lot in brightness (sky, glass facade,
+     foliage) — a flat gold on top of it was unreadable in places. A dark
+     shadow keeps it legible regardless of what's directly behind it,
+     without needing a solid backing panel. */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h1 {
