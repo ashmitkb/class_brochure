@@ -19,17 +19,24 @@
   padding: 10px 12px 10px 16px;
   border-radius: 999px;
 
-  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+  /* This tint carries the "glass" look on its own — backdrop-filter blur
+     is layered on top as a bonus for browsers/GPUs where it actually
+     renders, but plenty of real-world setups (some Windows GPU/driver
+     combos, RDP/VM sessions, hardware-accel disabled) silently fail to
+     render backdrop-filter at all, leaving only whatever the background
+     itself provides. A faint ~10% tint was invisible in that case; this
+     is opaque enough to read as a deliberate panel either way. */
+  background: linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.26));
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.22);
-  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.38);
+  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.3);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-nav.scrolled {
-  background: linear-gradient(135deg, rgba(11,37,69,0.62), rgba(11,37,69,0.42));
-  border-color: rgba(255,255,255,0.14);
+  background: linear-gradient(135deg, rgba(11,37,69,0.82), rgba(11,37,69,0.68));
+  border-color: rgba(255,255,255,0.16);
 }
 
 .glass-nav-brand {
