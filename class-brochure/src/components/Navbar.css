@@ -1,0 +1,163 @@
+.glass-nav-wrap {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.glass-nav-motion {
+  pointer-events: auto;
+  width: min(1120px, 92vw);
+}
+
+/* GlassSurface renders its own backdrop/sheen layers; this class just
+   forces its content wrapper to actually fill the pill so the flex
+   layout inside behaves like a normal nav bar. */
+.glass-nav-surface .glass-surface-content {
+  display: flex;
+  align-items: stretch;
+}
+
+.glass-nav-surface.scrolled .glass-surface-backdrop {
+  background: linear-gradient(135deg, rgba(11,37,69,0.6), rgba(11,37,69,0.4));
+}
+
+.glass-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 10px 8px 14px;
+}
+
+.glass-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-hi);
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* No background card — sits directly on the glass. Height-constrained,
+   width auto so a real (often wide/rectangular) logo never gets squashed. */
+.glass-nav-logo {
+  height: 34px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.glass-nav-brand-text {
+  display: none;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.glass-nav-brand-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-hi);
+}
+
+.glass-nav-brand-sub {
+  font-size: 9px;
+  color: rgba(238,244,237,0.7);
+}
+
+.glass-nav-links {
+  display: none;
+  gap: 26px;
+}
+
+.glass-nav-links a {
+  font-size: 14px;
+  color: rgba(238,244,237,0.85);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.glass-nav-links a:hover { color: var(--text-hi); }
+
+.glass-nav-cta {
+  display: none;
+  align-items: center;
+  background: var(--signal);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: transform 0.15s ease;
+}
+
+.glass-nav-cta:hover { transform: translateY(-1px); }
+
+.glass-nav-burger {
+  color: var(--text-hi);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Mobile full-screen menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--text-hi);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: center;
+}
+
+.mobile-menu nav a {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--text-hi);
+}
+
+/* Breakpoints: bring back full nav as space allows */
+@media (min-width: 620px) {
+  .glass-nav-brand-text { display: flex; }
+}
+
+@media (min-width: 860px) {
+  .glass-nav-links { display: flex; }
+  .glass-nav-cta { display: inline-flex; }
+  .glass-nav-burger { display: none; }
+}

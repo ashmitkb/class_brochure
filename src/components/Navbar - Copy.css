@@ -1,0 +1,174 @@
+.glass-nav-wrap {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.glass-nav {
+  pointer-events: auto;
+  width: min(1120px, 92vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.25);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-nav.scrolled {
+  background: linear-gradient(135deg, rgba(11,37,69,0.62), rgba(11,37,69,0.42));
+  border-color: rgba(255,255,255,0.14);
+}
+
+.glass-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-hi);
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* Logo sizing is height-constrained, width auto — never force a square
+   crop on a real (often wide/rectangular) university logo. No background
+   card behind it; it sits directly on the glass. */
+.glass-nav-logo {
+  height: 34px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.glass-nav-brand-text {
+  display: none;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.glass-nav-brand-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-hi);
+}
+
+.glass-nav-brand-sub {
+  font-size: 9px;
+  color: rgba(238,244,237,0.7);
+}
+
+.glass-nav-links {
+  display: none;
+  gap: 26px;
+}
+
+.glass-nav-links a {
+  position: relative;
+  font-size: 14px;
+  color: rgba(238,244,237,0.85);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.glass-nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+
+.glass-nav-links a:hover { color: var(--text-hi); }
+.glass-nav-links a:hover::after { transform: scaleX(1); }
+
+.glass-nav-cta {
+  display: none;
+  align-items: center;
+  background: var(--signal);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.glass-nav-burger {
+  color: var(--text-hi);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Mobile full-screen menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--text-hi);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  text-align: center;
+}
+
+.mobile-menu nav a {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--text-hi);
+}
+
+/* Breakpoints: bring back full nav as space allows */
+@media (min-width: 620px) {
+  .glass-nav-brand-text { display: flex; }
+}
+
+@media (min-width: 860px) {
+  .glass-nav-links { display: flex; }
+  .glass-nav-cta { display: inline-flex; }
+  .glass-nav-burger { display: none; }
+}
