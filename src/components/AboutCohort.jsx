@@ -52,7 +52,7 @@ export default function AboutCohort() {
         viewport={{ once: true, margin: '-100px' }}
         variants={fadeUp}
       >
-        One cohort, four years —
+        One cohort, four years,
         <br className="cohort-heading-break" /> captured in skills, projects, and certifications.
       </motion.h2>
 

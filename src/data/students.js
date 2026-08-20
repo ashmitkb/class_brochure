@@ -1,6 +1,6 @@
 import { img } from "framer-motion/client"
 
-// Class of 2023–27 BCA Honours — student directory data.
+// Class of 2023–27 BCA Honours - student directory data.
 // `photo` points to a passport-size headshot (portrait, roughly 3.5:4.5 ratio)
 // stored alongside this file in src/data.
 
@@ -47,7 +47,7 @@ export const students = [
     projects: [
       { title: "Bag Pack Optimizer & Expense Tracking | AI Financial Dashboard", desc: "Built an AI-powered full-stack budgeting web app with intelligent expense categorization, real-time budget tracking, predictive spending analysis, and a Progressive Web App dashboard built with Chart.js.", link: "" }
     ],
-    certifications: ["Public Speaking — NPTEL", "Ethical Hacking — Infosys", "Data Structures — Udemy", "Front End Developer Job Simulation — Skyscanner", "Data Structures Job Simulation — Walmart Global"],
+    certifications: ["Public Speaking - NPTEL", "Ethical Hacking - Infosys", "Data Structures - Udemy", "Front End Developer Job Simulation - Skyscanner", "Data Structures Job Simulation - Walmart Global"],
     email: "akshat.maheshwari@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/akshatmaheshwari73",
   },
@@ -62,10 +62,10 @@ export const students = [
     technicalSkills: [ "Python", "SQL", "SvelteKit", "JavaScript", "React", "C/C++ (Basics)", "MS Excel", "Git", "GitHub", "AWS Console", "PostHog (Basics)" ],
     professionalSkills: ["Leadership", "Data Storytelling", "Problem Solving", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "CycleBae | Women's AI Wellness Application — SvelteKit, TypeScript, Tailwind CSS", desc: "Implemented product features for a women's wellness app that lifted retention by 2.3%, built reusable frontend components, and resolved 10+ UI defects to streamline onboarding.", link: "" },
-      { title: "Chum Xperiences | Corporate Events Platform — React, TypeScript, Node.js, Vercel", desc: "Digitized the company's lead generation process, turning cold-calling workflows into a centralized online inquiry platform and lifting qualified inquiries by 40%.", link: "" }
+      { title: "CycleBae | Women's AI Wellness Application - SvelteKit, TypeScript, Tailwind CSS", desc: "Implemented product features for a women's wellness app that lifted retention by 2.3%, built reusable frontend components, and resolved 10+ UI defects to streamline onboarding.", link: "" },
+      { title: "Chum Xperiences | Corporate Events Platform - React, TypeScript, Node.js, Vercel", desc: "Digitized the company's lead generation process, turning cold-calling workflows into a centralized online inquiry platform and lifting qualified inquiries by 40%.", link: "" }
     ],
-    certifications: ["CS50's Introduction to Programming with Python — Harvard University (edX)", "CS50's Introduction to Artificial Intelligence with Python — Harvard University (edX)", "Hands-On Machine Learning with Python — Infosys Springboard"],
+    certifications: ["CS50's Introduction to Programming with Python - Harvard University (edX)", "CS50's Introduction to Artificial Intelligence with Python - Harvard University (edX)", "Hands-On Machine Learning with Python - Infosys Springboard"],
     email: "priyanshy.verma@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/priyanshy-verma",
   },
@@ -80,10 +80,10 @@ export const students = [
     technicalSkills: [ "Python", "SQL", "JavaScript", "React JS", "Git", "PowerShell" ],
     professionalSkills: ["Leadership", "Teamwork", "Problem Solving", "Cross-functional Collaboration"],
     projects: [
-      { title: "PC Builder Simulator — Unity, Blender", desc: "Built PC components for an interactive PC-building simulation environment.", link: "" },
-      { title: "Bramble — Python, SQLAlchemy, JavaScript", desc: "Delivered a machine learning model predicting future average climate conditions with 70% accuracy on 50 years of climate data, with an interactive web page to visualize results on maps.", link: "" }
+      { title: "PC Builder Simulator - Unity, Blender", desc: "Built PC components for an interactive PC-building simulation environment.", link: "" },
+      { title: "Bramble - Python, SQLAlchemy, JavaScript", desc: "Delivered a machine learning model predicting future average climate conditions with 70% accuracy on 50 years of climate data, with an interactive web page to visualize results on maps.", link: "" }
     ],
-    certifications: ["Google Cybersecurity Professional Certificate — Google / Coursera", "L&T Ethical Hacking Certification — L&T Edutech", "Data Structures and Algorithms using Java — Infosys Springboard", "TechA Machine Learning with Python — Infosys Springboard", "Mastering Kotlin for Android Development — Infosys Springboard", "Organizational Behaviour — NPTEL"],
+    certifications: ["Google Cybersecurity Professional Certificate - Google / Coursera", "L&T Ethical Hacking Certification - L&T Edutech", "Data Structures and Algorithms using Java - Infosys Springboard", "TechA Machine Learning with Python - Infosys Springboard", "Mastering Kotlin for Android Development - Infosys Springboard", "Organizational Behaviour - NPTEL"],
     email: "abhay.k@bcah.christuniversity.in",
     linkedin: "www.linkedin.com/in/abhay-k04",
   },
@@ -98,9 +98,9 @@ export const students = [
     technicalSkills: [ "Python", "Linux", "Bash", "Nmap", "Wireshark", "Burp Suite", "Metasploit", "Nessus", "Networks", "VirtualBox" ],
     professionalSkills: ["Leadership", "Analytical Thinking", "Problem Solving", "Technical Documentation", "Team Collaboration", "Communication"],
     projects: [
-      { title: "Cybersecurity Home Lab — Kali Linux, VirtualBox, Metasploit, Burp Suite, Wireshark, Nmap", desc: "Built a virtual cybersecurity lab simulating enterprise environments for penetration testing, privilege escalation, web security, and network analysis, strengthened through TryHackMe labs and CTF challenges.", link: "" }
+      { title: "Cybersecurity Home Lab - Kali Linux, VirtualBox, Metasploit, Burp Suite, Wireshark, Nmap", desc: "Built a virtual cybersecurity lab simulating enterprise environments for penetration testing, privilege escalation, web security, and network analysis, strengthened through TryHackMe labs and CTF challenges.", link: "" }
     ],
-    certifications: ["Ethical Hacking — L&T EduTech", "Introduction to Cybersecurity — Cisco Networking Academy", "AWS Academy Graduate – Cloud Foundations — AWS Academy", "Junior Penetration Tester Learning Path — TryHackMe (In Progress)"],
+    certifications: ["Ethical Hacking - L&T EduTech", "Introduction to Cybersecurity - Cisco Networking Academy", "AWS Academy Graduate – Cloud Foundations - AWS Academy", "Junior Penetration Tester Learning Path - TryHackMe (In Progress)"],
     email: "chiranjeevi.p@bcah.christuniversity.in",
     linkedin: "",
   },
@@ -115,10 +115,10 @@ export const students = [
     technicalSkills: [ "Python", "Java", "n8n Automation", "AI Agents", "Ethical Hacking", "Penetration Testing", "Linux Administration", "Prompt Engineering" ],
     professionalSkills: ["Analytical Problem Solving", "Workflow Optimization", "Technical Communication", "Cross-Functional Collaboration", "Project Leadership"],
     projects: [
-      { title: "AI Agent Automation Workflow — n8n, Gemini/OpenAI/Claude APIs, Google Sheets", desc: "Architected an automated lead generation and outreach workflow self-hosted on Hostinger, integrating AI APIs to process unstructured datasets and sync results to Google Sheets.", link: "" },
-      { title: "Verdex — Figma, UI/UX Design, Wireframing, Interactive Prototyping", desc: "Spearheaded end-to-end front-end interface design for a full-stack platform, building a standardized UI component library and mapping intuitive navigation flows across desktop and mobile.", link: "" }
+      { title: "AI Agent Automation Workflow - n8n, Gemini/OpenAI/Claude APIs, Google Sheets", desc: "Architected an automated lead generation and outreach workflow self-hosted on Hostinger, integrating AI APIs to process unstructured datasets and sync results to Google Sheets.", link: "" },
+      { title: "Verdex - Figma, UI/UX Design, Wireframing, Interactive Prototyping", desc: "Spearheaded end-to-end front-end interface design for a full-stack platform, building a standardized UI component library and mapping intuitive navigation flows across desktop and mobile.", link: "" }
     ],
-    certifications: ["Entrepreneurship Essentials — NPTEL / SWAYAM", "Ethical Hacking — Larsen & Toubro (L&T)"],
+    certifications: ["Entrepreneurship Essentials - NPTEL / SWAYAM", "Ethical Hacking - Larsen & Toubro (L&T)"],
     email: "dylan.fernandes@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/dylan-fernandes-295029302",
   },
@@ -134,9 +134,9 @@ export const students = [
     professionalSkills: ["Supply Chain & Operations Analytics", "Root Cause Analysis", "Stakeholder Management", "KPI Tracking", "Process Automation"],
     projects: [
       { title: "Supply Chain Procurement & Requisition Automation", desc: "Automated end-to-end procurement workflows extracting critical parameters from maritime requisitions using n8n and AI nodes, cleaning and processing unstructured supply chain data for operational review.", link: "" },
-      { title: "Water Scarcity Dashboard — AI, Python, Full Stack Development", desc: "Built an AI-powered predictive dashboard processing 10,000+ regional data points to monitor water levels and forecast shortages with 85%+ model accuracy.", link: "" }
+      { title: "Water Scarcity Dashboard - AI, Python, Full Stack Development", desc: "Built an AI-powered predictive dashboard processing 10,000+ regional data points to monitor water levels and forecast shortages with 85%+ model accuracy.", link: "" }
     ],
-    certifications: ["Data Structures and Algorithms using Java — Infosys Springboard", "Big Data 101 — Infosys Springboard", "TechA Machine Learning with Python — Infosys Springboard"],
+    certifications: ["Data Structures and Algorithms using Java - Infosys Springboard", "Big Data 101 - Infosys Springboard", "TechA Machine Learning with Python - Infosys Springboard"],
     email: "Devdatt.rajesh@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/devdattrajesh",
   },
@@ -151,10 +151,10 @@ export const students = [
     technicalSkills: [ "PHP", "HTML", "CSS", "JavaScript", "Bootstrap", "AJAX", "C", "C++", "Python", "MongoDB", "SQL", "REST APIs", "Power BI", "AWS", "TensorFlow Lite", "Roboflow", "OpenCV", "IoT" ],
     professionalSkills: ["Data Storytelling", "Problem Solving", "Team Leadership", "Documentation", "Project Coordination", "Cross-functional Collaboration", "Creativity"],
     projects: [
-      { title: "Terralens — AI-Powered Microplastic Mapping in Soil | Python, Android Studio, Roboflow, TensorFlow Lite", desc: "Built an Android app to detect microplastics in soil using AI image classification trained via Roboflow, with Firebase Authentication and an on-device TensorFlow Lite model for real-time predictions.", link: "" },
-      { title: "Interview Simulation App — AR/VR Virtual Interview Training | Unity, Blender, C#, ARCore, Firebase", desc: "Developed an immersive AR/VR app simulating real interview scenarios, designing 3D environments and character animations in Blender integrated into Unity.", link: "" }
+      { title: "Terralens - AI-Powered Microplastic Mapping in Soil | Python, Android Studio, Roboflow, TensorFlow Lite", desc: "Built an Android app to detect microplastics in soil using AI image classification trained via Roboflow, with Firebase Authentication and an on-device TensorFlow Lite model for real-time predictions.", link: "" },
+      { title: "Interview Simulation App - AR/VR Virtual Interview Training | Unity, Blender, C#, ARCore, Firebase", desc: "Developed an immersive AR/VR app simulating real interview scenarios, designing 3D environments and character animations in Blender integrated into Unity.", link: "" }
     ],
-    certifications: ["L&T EduTech Back-End Frameworks and APIs — L&T Edutech", "Data Structures and Algorithms using Java — Infosys Springboard", "Remote Sensing Data Analytics in Crop Production Forecasting — ISRO & IIRS", "AWS Academy Graduate – Cloud Foundations — AWS Academy"],
+    certifications: ["L&T EduTech Back-End Frameworks and APIs - L&T Edutech", "Data Structures and Algorithms using Java - Infosys Springboard", "Remote Sensing Data Analytics in Crop Production Forecasting - ISRO & IIRS", "AWS Academy Graduate – Cloud Foundations - AWS Academy"],
     email: "Nivea.sebastian@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/niveaseby",
   },
@@ -169,10 +169,10 @@ export const students = [
     technicalSkills: [ "Excel (Advanced)", "Power BI", "Python", "Bloomberg Terminal", "Tally Prime", "SQL" ],
     professionalSkills: ["Stakeholder Communication", "Negotiation", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "Nifty 50 Sector Rotation Model — Python, Excel, Power BI", desc: "Built a rules-based sector-rotation model across 11 NSE sectoral indices using 6 macro indicators, backtesting a 5-year CAGR of 14.2% versus 11.8% for Nifty 50 buy-and-hold.", link: "" },
-      { title: "Comparable Company Valuation – Paints Sector — Excel, Bloomberg Terminal", desc: "Built a 6-company comps set (EV/EBITDA, P/E, P/B) for listed paint makers, cross-checked against a 3-stage DCF and presented the framework at a case session.", link: "" }
+      { title: "Nifty 50 Sector Rotation Model - Python, Excel, Power BI", desc: "Built a rules-based sector-rotation model across 11 NSE sectoral indices using 6 macro indicators, backtesting a 5-year CAGR of 14.2% versus 11.8% for Nifty 50 buy-and-hold.", link: "" },
+      { title: "Comparable Company Valuation – Paints Sector - Excel, Bloomberg Terminal", desc: "Built a 6-company comps set (EV/EBITDA, P/E, P/B) for listed paint makers, cross-checked against a 3-stage DCF and presented the framework at a case session.", link: "" }
     ],
-    certifications: ["Google Student Ambassador Program — Google Gemini", "Python for Data Science & Supervised Machine Learning — IBM", "Machine Learning & Deep Learning Architectures — Infosys"],
+    certifications: ["Google Student Ambassador Program - Google Gemini", "Python for Data Science & Supervised Machine Learning - IBM", "Machine Learning & Deep Learning Architectures - Infosys"],
     email: "nila.prasad@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/nila-prasad-4ab6032ba",
   },
@@ -187,11 +187,11 @@ export const students = [
     technicalSkills: [ "Python", "JavaScript", "PyTorch/TensorFlow", "SQL", "Pandas", "NumPy", "Matplotlib/Seaborn", "Git", "Unity", "React", "Node/Express" ],
     professionalSkills: ["Problem Solving", "Data Storytelling", "Technical Writing", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "AI-Driven Green Corridor for Emergency Vehicles — IoT, AI, Data Analysis", desc: "Developed an IoT-based traffic management system creating unobstructed corridors for emergency vehicles, validated with the Bengaluru Traffic Police Department and currently pursuing a patent.", link: "" },
-      { title: "Deo — Local Voice Assistant | Full Stack AI Integration", desc: "Built a local-first voice assistant (Ollama, faster-whisper, Piper TTS) with tool-calling for app control, web search, and productivity tasks, plus a persistent JSON-based memory system.", link: "" },
-      { title: "F1 Pit Stop & Tire Compound Prediction — Machine Learning, Data Analysis", desc: "Pulled and analyzed historical race data via the FastF1 API, cleaning telemetry and lap data and engineering features from raw data.", link: "" }
+      { title: "AI-Driven Green Corridor for Emergency Vehicles - IoT, AI, Data Analysis", desc: "Developed an IoT-based traffic management system creating unobstructed corridors for emergency vehicles, validated with the Bengaluru Traffic Police Department and currently pursuing a patent.", link: "" },
+      { title: "Deo - Local Voice Assistant | Full Stack AI Integration", desc: "Built a local-first voice assistant (Ollama, faster-whisper, Piper TTS) with tool-calling for app control, web search, and productivity tasks, plus a persistent JSON-based memory system.", link: "" },
+      { title: "F1 Pit Stop & Tire Compound Prediction - Machine Learning, Data Analysis", desc: "Pulled and analyzed historical race data via the FastF1 API, cleaning telemetry and lap data and engineering features from raw data.", link: "" }
     ],
-    certifications: ["E-Business Course — Swayam / NPTEL", "AWS Cloud Course — AWS", "Google Data Analytics — Google / Coursera"],
+    certifications: ["E-Business Course - Swayam / NPTEL", "AWS Cloud Course - AWS", "Google Data Analytics - Google / Coursera"],
     email: "ashmit.kiran@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/ashmit-bhandary",
   },
@@ -206,11 +206,11 @@ export const students = [
     technicalSkills: [ "Python", "R", "MySQL", "Microsoft Excel (Advanced)", "Power BI", "Tableau", "Streamlit", "Git", "GitHub", "Scikit-learn", "TensorFlow", "XGBoost" ],
     professionalSkills: ["Leadership", "Data Storytelling", "Problem Solving", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "FinDatasetGen — SEC Financial Dataset Generation Pipeline | Python, SEC EDGAR API, BeautifulSoup, NLP", desc: "Built an end-to-end pipeline to extract, process, and standardize SEC EDGAR XBRL filings, engineering 90+ financial features across 9,860+ financial observations.", link: "" },
-      { title: "UAPIS — University Admission Policy Intelligence System | Python, Streamlit, OpenRouter, LLMs", desc: "Built a machine learning admission predictor using 8 applicant features and automated 4 admission policy strategies with AI-generated recommendations, processing 1,000+ applicant records.", link: "" },
+      { title: "FinDatasetGen - SEC Financial Dataset Generation Pipeline | Python, SEC EDGAR API, BeautifulSoup, NLP", desc: "Built an end-to-end pipeline to extract, process, and standardize SEC EDGAR XBRL filings, engineering 90+ financial features across 9,860+ financial observations.", link: "" },
+      { title: "UAPIS - University Admission Policy Intelligence System | Python, Streamlit, OpenRouter, LLMs", desc: "Built a machine learning admission predictor using 8 applicant features and automated 4 admission policy strategies with AI-generated recommendations, processing 1,000+ applicant records.", link: "" },
       { title: "CRM Analysis | R, MySQL Workbench, Excel", desc: "Developed an RFM analysis dashboard analyzing customer behavior patterns from a UCI dataset of 15,000+ customer records.", link: "" }
     ],
-    certifications: ["Bloomberg Finance Fundamentals — Bloomberg Education", "Data-Driven Storytelling and Visualization — L&T Edu-Tech", "Management Information System — IIT Kharagpur"],
+    certifications: ["Bloomberg Finance Fundamentals - Bloomberg Education", "Data-Driven Storytelling and Visualization - L&T Edu-Tech", "Management Information System - IIT Kharagpur"],
     email: "pranay.asopa@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/pranay-asopa-584891281",
   },
@@ -225,10 +225,10 @@ export const students = [
     technicalSkills: [ "Unity", "Blender", "Python", "React.js", "MS Excel", "HTML", "CSS", "SQL" ],
     professionalSkills: ["Leadership", "Problem Solving", "Cross-functional Collaboration"],
     projects: [
-      { title: "Bramble — Python, SQLAlchemy, React JavaScript", desc: "Created a centralized web application for visualizing, analyzing, and predicting climate trends, including an interactive global climate map, a data dashboard, an ML prediction UI, and an onboarding chatbot.", link: "" },
-      { title: "PC Builder — Unity, Blender, Three.js", desc: "Developed a fully interactive environment with a movable character and 3D models of computer parts, providing a teaching element on building PCs.", link: "" }
+      { title: "Bramble - Python, SQLAlchemy, React JavaScript", desc: "Created a centralized web application for visualizing, analyzing, and predicting climate trends, including an interactive global climate map, a data dashboard, an ML prediction UI, and an onboarding chatbot.", link: "" },
+      { title: "PC Builder - Unity, Blender, Three.js", desc: "Developed a fully interactive environment with a movable character and 3D models of computer parts, providing a teaching element on building PCs.", link: "" }
     ],
-    certifications: ["AWS Academy Graduate - Cloud Foundations — AWS Academy", "Organizational Behavior — NPTEL", "Ethical Hacking — L&T Edutech"],
+    certifications: ["AWS Academy Graduate - Cloud Foundations - AWS Academy", "Organizational Behavior - NPTEL", "Ethical Hacking - L&T Edutech"],
     email: "aaron.koshy@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/aaronparayil",
   },
@@ -243,11 +243,11 @@ export const students = [
     technicalSkills: [ "Python", "Java", "SQL", "Git", "GitHub", "Linux Fundamentals", "Power BI" ],
     professionalSkills: ["Leadership", "Problem Solving", "Team Collaboration", "Public Speaking"],
     projects: [
-      { title: "Neural Network Digit Classifier — Python, NumPy, Streamlit, Machine Learning", desc: "Designed a handwritten digit recognition system using a custom neural network architecture with a Streamlit interface for real-time classification.", link: "" },
-      { title: "Brain Tumor Detection using Deep Learning — Python, TensorFlow, Keras, OpenCV, CNN", desc: "Developed a CNN-based deep learning model to detect brain tumors from MRI scans, implementing image preprocessing, model training, and real-time prediction.", link: "" },
-      { title: "Slack-Freshsales Automation Bot — Python, Slack API, Freshsales API, REST APIs", desc: "Built a Python-based Slack chatbot that automatically captured lead details from Slack conversations and synchronized them with Freshsales CRM.", link: "" }
+      { title: "Neural Network Digit Classifier - Python, NumPy, Streamlit, Machine Learning", desc: "Designed a handwritten digit recognition system using a custom neural network architecture with a Streamlit interface for real-time classification.", link: "" },
+      { title: "Brain Tumor Detection using Deep Learning - Python, TensorFlow, Keras, OpenCV, CNN", desc: "Developed a CNN-based deep learning model to detect brain tumors from MRI scans, implementing image preprocessing, model training, and real-time prediction.", link: "" },
+      { title: "Slack-Freshsales Automation Bot - Python, Slack API, Freshsales API, REST APIs", desc: "Built a Python-based Slack chatbot that automatically captured lead details from Slack conversations and synchronized them with Freshsales CRM.", link: "" }
     ],
-    certifications: ["Machine Learning with Python Certification — Infosys Springboard (TechA)", "Google Cybersecurity Professional Certificate — Google / Coursera", "Generative AI Workshop — IISc Bangalore & PravEga 2025", "Model Data with Power BI — Microsoft Learn", "Design, Technology and Innovation — SWAYAM / NPTEL"],
+    certifications: ["Machine Learning with Python Certification - Infosys Springboard (TechA)", "Google Cybersecurity Professional Certificate - Google / Coursera", "Generative AI Workshop - IISc Bangalore & PravEga 2025", "Model Data with Power BI - Microsoft Learn", "Design, Technology and Innovation - SWAYAM / NPTEL"],
     email: "poornima.a@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/poornima003",
   },
@@ -262,12 +262,12 @@ export const students = [
     technicalSkills: [ "Python", "Git", "SQL", "Docker", "Hugging Face", "ML Fundamentals", "AI Automations", "Figma" ],
     professionalSkills: ["Leadership", "Problem Solving", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "Real-Time Traffic Analysis — Python, Scikit-learn, TomTom API", desc: "Built a machine learning-based traffic analysis system processing real-time traffic data, classifying congestion levels, and visualizing traffic patterns.", link: "" },
-      { title: "Object Detection System — Python, OpenCV, YOLO, Flask", desc: "Developed a computer vision app for real-time object detection and localization using deep learning models with an image upload and inference pipeline.", link: "" },
-      { title: "ImageClassify-CIFAR10 — Python, TensorFlow, Streamlit", desc: "Built a CNN-based image classifier with 78% accuracy and a Streamlit interface for real-time predictions and confidence scoring.", link: "" },
-      { title: "Apple Variety Classifier — Python, TensorFlow, Keras, CNN", desc: "Built a CNN classifier for 10 apple varieties using transfer learning, data augmentation, and hyperparameter tuning.", link: "" }
+      { title: "Real-Time Traffic Analysis - Python, Scikit-learn, TomTom API", desc: "Built a machine learning-based traffic analysis system processing real-time traffic data, classifying congestion levels, and visualizing traffic patterns.", link: "" },
+      { title: "Object Detection System - Python, OpenCV, YOLO, Flask", desc: "Developed a computer vision app for real-time object detection and localization using deep learning models with an image upload and inference pipeline.", link: "" },
+      { title: "ImageClassify-CIFAR10 - Python, TensorFlow, Streamlit", desc: "Built a CNN-based image classifier with 78% accuracy and a Streamlit interface for real-time predictions and confidence scoring.", link: "" },
+      { title: "Apple Variety Classifier - Python, TensorFlow, Keras, CNN", desc: "Built a CNN classifier for 10 apple varieties using transfer learning, data augmentation, and hyperparameter tuning.", link: "" }
     ],
-    certifications: ["Generative AI — Google", "Back-end Frameworks and APIs Certificate — L&T Group"],
+    certifications: ["Generative AI - Google", "Back-end Frameworks and APIs Certificate - L&T Group"],
     email: "shashwat@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/shashwatk26",
   },
@@ -283,9 +283,9 @@ export const students = [
     professionalSkills: ["Risk Identification", "Security Policy Awareness", "Technical Documentation", "Report Writing"],
     projects: [
       { title: "Network Vulnerability Assessment Project", desc: "Performed systematic port scanning and service enumeration to identify open attack surfaces, documenting risks with severity ratings and categorizing vulnerability data using Excel PivotTables.", link: "" },
-      { title: "Quit Buddy — Substance Abuse Risk Assessment System | Python, HTML, CSS, MongoDB", desc: "Developed a web-based risk assessment system enhanced with React.js and an AI chatbot (Gemini API), integrating Supabase for dashboards, posts, stress calculators, and appointment booking.", link: "" }
+      { title: "Quit Buddy - Substance Abuse Risk Assessment System | Python, HTML, CSS, MongoDB", desc: "Developed a web-based risk assessment system enhanced with React.js and an AI chatbot (Gemini API), integrating Supabase for dashboards, posts, stress calculators, and appointment booking.", link: "" }
     ],
-    certifications: ["Ethical Hacking — L&T Edutech", "MERN Stack Development Workshop"],
+    certifications: ["Ethical Hacking - L&T Edutech", "MERN Stack Development Workshop"],
     email: "pbjeevan6079@gmail.com",
     linkedin: "linkedin.com/in/pbjeevan",
   },
@@ -300,8 +300,8 @@ export const students = [
     technicalSkills: [ "Python (NumPy, Pandas, Matplotlib)", "SQL (MySQL)", "Statistical Analysis", "Data Cleaning & Preprocessing", "Advanced MS Excel" ],
     professionalSkills: ["Insight Generation", "Strategic Recommendations", "Cross-functional Coordination", "Stakeholder Communication", "Attention to Detail"],
     projects: [
-      { title: "Molecular Docking Automation Pipeline — Pharma Domain", desc: "Integrated multiple computational tools into a single automated pipeline for molecular docking, achieving 86% prediction accuracy and reducing processing time by 1.5x.", link: "" },
-      { title: "Nutri-Journey: Consumer Behaviour & Insights Model — Healthcare Lifestyle", desc: "Conducted primary and secondary consumer research on behavioural determinants influencing health decisions, synthesizing findings into commercially aligned insights.", link: "" }
+      { title: "Molecular Docking Automation Pipeline - Pharma Domain", desc: "Integrated multiple computational tools into a single automated pipeline for molecular docking, achieving 86% prediction accuracy and reducing processing time by 1.5x.", link: "" },
+      { title: "Nutri-Journey: Consumer Behaviour & Insights Model - Healthcare Lifestyle", desc: "Conducted primary and secondary consumer research on behavioural determinants influencing health decisions, synthesizing findings into commercially aligned insights.", link: "" }
     ],
     certifications: [],
     email: "kvynagar@gmail.com",
@@ -318,10 +318,10 @@ export const students = [
     technicalSkills: [ "Java", "Python", "C/C++", "MySQL", "PostgreSQL", "JavaScript", "HTML/CSS", "React", "Node.js", "Flask", "Streamlit", "Tailwind CSS", "Git", "AWS", "Google Cloud Platform" ],
     professionalSkills: ["Active & Self Learning", "Logical & Critical Thinking", "Problem-Solving"],
     projects: [
-      { title: "VerdeX — Carbon Credit Trading Platform | React, Express, Supabase, Node.js", desc: "Developed a full-stack carbon credit marketplace with dual-layer authentication, an admin approval system, and an impact-scoring algorithm to gamify user engagement and rank traders.", link: "" },
-      { title: "Metanoia — University Event Registration | HTML5, CSS3, JS, Apps Script", desc: "Built a responsive event registration web app serving 7 university events, integrating Google Apps Script to store 200+ participant registrations with real-time form validation.", link: "" }
+      { title: "VerdeX - Carbon Credit Trading Platform | React, Express, Supabase, Node.js", desc: "Developed a full-stack carbon credit marketplace with dual-layer authentication, an admin approval system, and an impact-scoring algorithm to gamify user engagement and rank traders.", link: "" },
+      { title: "Metanoia - University Event Registration | HTML5, CSS3, JS, Apps Script", desc: "Built a responsive event registration web app serving 7 university events, integrating Google Apps Script to store 200+ participant registrations with real-time form validation.", link: "" }
     ],
-    certifications: ["Backend Frameworks and API — L&T Edtech", "German - I — NPTEL"],
+    certifications: ["Backend Frameworks and API - L&T Edtech", "German - I - NPTEL"],
     email: "nityanand.k@bcah.christuniversity.in",
     linkedin: "linkedin.com/nityanand-k-g-2829a6279",
   },
@@ -336,10 +336,10 @@ export const students = [
     technicalSkills: [ "Blender", "Unity", "Python", "C++", "Java", "Cybersecurity Tools" ],
     professionalSkills: ["Leadership", "Teamwork", "Adaptability", "Communication"],
     projects: [
-      { title: "PC Building Simulator (AR/VR) — Unity, Three.js, Blender", desc: "Delivered an interactive web app for users to build PCs in virtual or augmented reality, optimizing 3D asset pipelines in Blender for smooth 60 FPS performance on low-spec mobile AR devices.", link: "" },
-      { title: "Bramble — Climate Prediction using Linear Regression | Python, JavaScript", desc: "Developed a forecasting model to project future climate trends, achieving 70% model accuracy by testing 50 years of climate data with an interactive global climate map.", link: "" }
+      { title: "PC Building Simulator (AR/VR) - Unity, Three.js, Blender", desc: "Delivered an interactive web app for users to build PCs in virtual or augmented reality, optimizing 3D asset pipelines in Blender for smooth 60 FPS performance on low-spec mobile AR devices.", link: "" },
+      { title: "Bramble - Climate Prediction using Linear Regression | Python, JavaScript", desc: "Developed a forecasting model to project future climate trends, achieving 70% model accuracy by testing 50 years of climate data with an interactive global climate map.", link: "" }
     ],
-    certifications: ["Organizational Behaviour — NPTEL", "L&T Ethical Hacking Certification — L&T Edutech"],
+    certifications: ["Organizational Behaviour - NPTEL", "L&T Ethical Hacking Certification - L&T Edutech"],
     email: "athul.b@bcah.christuniversity.in",
     linkedin: "www.linkedin.com/in/athul-bm",
   },
@@ -357,7 +357,7 @@ export const students = [
       { title: "AI-Powered Personal Fitness Coach", desc: "Architected a multi-dimensional data ingestion pipeline capturing 10+ biometric parameters and deployed an LLM-based personalization engine (Google Gemini API) generating adaptive workout and meal plans.", link: "" },
       { title: "JoinHands | React (TypeScript), Node.js, PostgreSQL (Supabase)", desc: "Engineered a full-stack NGO onboarding platform with analytics dashboards for registrations and engagement, and automated bulk certificate generation with ZIP export.", link: "" }
     ],
-    certifications: ["Machine Learning Specialization — DeepLearning.AI", "Hands-on Supervised Machine Learning with Python — Infosys Springboard", "Data Driven Storytelling and Visualization — L&T EduTech", "Cloud Foundations — AWS Academy Graduate"],
+    certifications: ["Machine Learning Specialization - DeepLearning.AI", "Hands-on Supervised Machine Learning with Python - Infosys Springboard", "Data Driven Storytelling and Visualization - L&T EduTech", "Cloud Foundations - AWS Academy Graduate"],
     email: "udhavdhandia@gmail.com",
     linkedin: "linkedin.com/in/udhavdhandia",
   },
@@ -372,10 +372,10 @@ export const students = [
     technicalSkills: [ "Python", "JavaScript (ES6+)", "TypeScript", "Java", "C/C++", "HTML/CSS", "SQL", "React", "Node.js", "Express.js", "Tailwind CSS", "LangChain", "LangGraph", "Supabase", "MongoDB", "AWS", "Git", "REST APIs", "Vercel", "Figma" ],
     professionalSkills: ["Project Coordination", "Stakeholder Communication", "Timeline Management", "Cross-functional Team Leadership", "Strategic Planning"],
     projects: [
-      { title: "Multi-Agent Code Writing System — Python, LangGraph, Gemini API", desc: "Built a collaborative multi-agent AI system with specialised agents for code generation, automated testing, and workflow orchestration, implementing agent communication protocols for parallel task execution across complex coding pipelines.", link: "" },
-      { title: "Lumière 2025 — Management Fest Portal | React, TypeScript, Node.js", desc: "Developed the official web portal for CHRIST University's management fest 'Age of Multipolar,' featuring interactive event registration, a competition showcase, an integrated venue map, and a real-time admin dashboard for organizers.", link: "" }
+      { title: "Multi-Agent Code Writing System - Python, LangGraph, Gemini API", desc: "Built a collaborative multi-agent AI system with specialised agents for code generation, automated testing, and workflow orchestration, implementing agent communication protocols for parallel task execution across complex coding pipelines.", link: "" },
+      { title: "Lumière 2025 - Management Fest Portal | React, TypeScript, Node.js", desc: "Developed the official web portal for CHRIST University's management fest 'Age of Multipolar,' featuring interactive event registration, a competition showcase, an integrated venue map, and a real-time admin dashboard for organizers.", link: "" }
     ],
-    certifications: ["What Is Generative AI? — LinkedIn Learning", "International Programming Proggy-Buddy Contest — DataArt", "Ethical Hacking — L&T EduTech"],
+    certifications: ["What Is Generative AI? - LinkedIn Learning", "International Programming Proggy-Buddy Contest - DataArt", "Ethical Hacking - L&T EduTech"],
     email: "samarthghag@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/samarthghag",
   },
@@ -390,9 +390,9 @@ export const students = [
     technicalSkills: [ "Python", "C", "C++", "C#", "MySQL", "SQLite", "MongoDB", "Git", "VS Code", "Power BI" ],
     professionalSkills: ["Leadership", "Data Storytelling", "Adaptability & Problem Solving", "Cross-functional Collaboration", "Outreach & Relationship Building"],
     projects: [
-      { title: "CogniSign — Computer Vision | Python, YOLO, OpenCV", desc: "Built a YOLO-based real-time hand sign detection model handling data preprocessing, annotation, augmentation, and class balancing across 10+ alphabet classes, with a Python GUI for live sign-to-text conversion.", link: "" }
+      { title: "CogniSign - Computer Vision | Python, YOLO, OpenCV", desc: "Built a YOLO-based real-time hand sign detection model handling data preprocessing, annotation, augmentation, and class balancing across 10+ alphabet classes, with a Python GUI for live sign-to-text conversion.", link: "" }
     ],
-    certifications: ["AWS Cloud Foundations — Amazon Web Services (AWS) Training and Certification"],
+    certifications: ["AWS Cloud Foundations - Amazon Web Services (AWS) Training and Certification"],
     email: "tushar.jana@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/tushar-jana",
   },
@@ -407,9 +407,9 @@ export const students = [
     technicalSkills: [ "AWS", "Python", "SQL", "Linux (Beginner)", "Docker", "Git", "API Integration", "IoT Protocols" ],
     professionalSkills: ["Leadership", "Communication", "Time Management", "Problem Solving", "Adaptability", "Emotional Intelligence"],
     projects: [
-      { title: "Emergency Vehicle Traffic Detection System (Patent Filing in Progress) — Python, AWS, IoT, ESP32/Arduino, OpenCV, MQTT", desc: "Developing an AI-powered smart traffic management system creating dynamic green corridors for emergency vehicles, presented to Bangalore Traffic Police for its potential to improve emergency response.", link: "" }
+      { title: "Emergency Vehicle Traffic Detection System (Patent Filing in Progress) - Python, AWS, IoT, ESP32/Arduino, OpenCV, MQTT", desc: "Developing an AI-powered smart traffic management system creating dynamic green corridors for emergency vehicles, presented to Bangalore Traffic Police for its potential to improve emergency response.", link: "" }
     ],
-    certifications: ["AWS Academy Graduate — AWS", "AWS Cloud Quest — AWS", "Introduction to Generative AI — Google Cloud Skills Boost"],
+    certifications: ["AWS Academy Graduate - AWS", "AWS Cloud Quest - AWS", "Introduction to Generative AI - Google Cloud Skills Boost"],
     email: "mohammed.sohail@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/md-sohail05",
   },
@@ -424,10 +424,10 @@ export const students = [
     technicalSkills: [ "Python", "C", "C++", "Java", "SQL", "Git", "GitHub", "Linux", "Bash", "TensorFlow", "OpenCV", "NumPy", "Pandas" ],
     professionalSkills: ["Leadership", "Problem Solving", "Analytical Thinking", "Team Collaboration", "Communication", "Time Management"],
     projects: [
-      { title: "Organic vs. Inorganic Agricultural Product Classification — Python, TensorFlow, OpenCV", desc: "Developed a deep learning system to classify organic and inorganic agricultural products, building a customizable RGB lighting system and spectrometer for controlled image acquisition.", link: "" },
-      { title: "5×5 LED Matrix Display — ATtiny13, C/C++, Arduino IDE, 74HC595", desc: "Designed a multiplexed 5×5 LED matrix using an ATtiny13 and dual 74HC595 shift registers, optimizing embedded firmware for constrained hardware.", link: "" }
+      { title: "Organic vs. Inorganic Agricultural Product Classification - Python, TensorFlow, OpenCV", desc: "Developed a deep learning system to classify organic and inorganic agricultural products, building a customizable RGB lighting system and spectrometer for controlled image acquisition.", link: "" },
+      { title: "5×5 LED Matrix Display - ATtiny13, C/C++, Arduino IDE, 74HC595", desc: "Designed a multiplexed 5×5 LED matrix using an ATtiny13 and dual 74HC595 shift registers, optimizing embedded firmware for constrained hardware.", link: "" }
     ],
-    certifications: ["SAP Generative AI Developer — SAP", "Mastering Data Structures & Algorithms using C and C++ — Udemy", "Digital Circuits — Brilliant"],
+    certifications: ["SAP Generative AI Developer - SAP", "Mastering Data Structures & Algorithms using C and C++ - Udemy", "Digital Circuits - Brilliant"],
     email: "priyangshuprotim.gogoi@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/priyangshuprotim",
   },
@@ -442,10 +442,10 @@ export const students = [
     technicalSkills: [ "Python", "Power BI", "MS Excel", "Power Automate", "SQL" ],
     professionalSkills: ["Analytical Thinking", "Problem Solving", "Critical Thinking", "Effective Communication", "Team Collaboration", "Time Management", "Attention to Detail", "Adaptability"],
     projects: [
-      { title: "Business Intelligence Dashboards — Power BI", desc: "Designed and developed interactive dashboards for revenue tracking, operational analytics, and performance monitoring.", link: "" },
-      { title: "Backpack Optimizer Web Application — Python, HTML, Excel", desc: "Developed a web application enabling students to track expenses, manage budgets, and monitor spending patterns.", link: "" }
+      { title: "Business Intelligence Dashboards - Power BI", desc: "Designed and developed interactive dashboards for revenue tracking, operational analytics, and performance monitoring.", link: "" },
+      { title: "Backpack Optimizer Web Application - Python, HTML, Excel", desc: "Developed a web application enabling students to track expenses, manage budgets, and monitor spending patterns.", link: "" }
     ],
-    certifications: ["Excel with Python — Infosys Springboard", "HR Analytics — NPTEL", "Principles of Data Science — Infosys Springboard"],
+    certifications: ["Excel with Python - Infosys Springboard", "HR Analytics - NPTEL", "Principles of Data Science - Infosys Springboard"],
     email: "tracy.rosemeyer@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/tracy-rosemeyer",
   },
@@ -460,11 +460,11 @@ export const students = [
     technicalSkills: [ "Python", "Java", "JavaScript", "Kotlin", "C++", "Data Structures & Algorithms", "SQL", "MS Excel (Advanced)", "Power BI", "Tableau", "Git", "GitHub", "HTML", "CSS", "ReactJS", "NodeJS", "Supabase" ],
     professionalSkills: ["Leadership", "Analytical Thinking", "Problem Solving", "Cross-functional Collaboration", "Public Speaking"],
     projects: [
-      { title: "AI Customer Support Chatbot — Python, AWS Bedrock, Streamlit", desc: "Developed an AI-powered customer support chatbot with prompt engineering, persistent chat history, and PDF export, designing a domain-specific assistant for product recommendations and support.", link: "" },
-      { title: "CauseForConnect — React JS, Supabase", desc: "Developed an NGO management portal with donation, volunteer, and event management modules, integrating authentication and CRUD operations for secure data management.", link: "" },
-      { title: "Employee Management System — Python", desc: "Developed a Python-based employee management system with secure authentication and modular CRUD operations using OOP principles.", link: "" }
+      { title: "AI Customer Support Chatbot - Python, AWS Bedrock, Streamlit", desc: "Developed an AI-powered customer support chatbot with prompt engineering, persistent chat history, and PDF export, designing a domain-specific assistant for product recommendations and support.", link: "" },
+      { title: "CauseForConnect - React JS, Supabase", desc: "Developed an NGO management portal with donation, volunteer, and event management modules, integrating authentication and CRUD operations for secure data management.", link: "" },
+      { title: "Employee Management System - Python", desc: "Developed a Python-based employee management system with secure authentication and modular CRUD operations using OOP principles.", link: "" }
     ],
-    certifications: ["AWS Technical Essentials — Amazon Web Services", "TechA Machine Learning with Python — Infosys Springboard", "Product and Brand Management — NPTEL", "Generative AI — LinkedIn Learning", "Big Data 101 — Infosys Springboard"],
+    certifications: ["AWS Technical Essentials - Amazon Web Services", "TechA Machine Learning with Python - Infosys Springboard", "Product and Brand Management - NPTEL", "Generative AI - LinkedIn Learning", "Big Data 101 - Infosys Springboard"],
     email: "harshita.bisht@bcah.christuniversity.in",
     linkedin: "",
   },
@@ -479,11 +479,11 @@ export const students = [
     technicalSkills: [ "Java", "Python", "C/C++", "SQL", "MongoDB", "Flask", "Power BI", "Tableau", "Blender", "HTML", "CSS", "JavaScript", "Three.js" ],
     professionalSkills: ["Creativity", "Communication", "Time Management", "Problem Solving", "Adaptability", "Teamwork"],
     projects: [
-      { title: "Envision — Smart Specs for the Blind | Arduino, ESP32 Camera, Bluetooth", desc: "Engineered an assistive wearable for the visually impaired using ESP32-CAM and ultrasonic sensors, integrating AI-powered image processing for real-time guidance and obstacle detection.", link: "" },
-      { title: "JoinHands — NGO & Volunteer Connect | Full-Stack Development", desc: "Built a scalable, AI-driven web platform using React, Supabase, and Node.js to streamline volunteer recruitment, secure donation processing, and automated event management.", link: "" },
-      { title: "What Makes Our Earth — 3D Virtual Exploration Website | Three.js, Blender", desc: "Developed immersive web-based AR/VR environments using Three.js, Unity, and Blender, featuring real-time 3D rendering and interactive scene navigation.", link: "" }
+      { title: "Envision - Smart Specs for the Blind | Arduino, ESP32 Camera, Bluetooth", desc: "Engineered an assistive wearable for the visually impaired using ESP32-CAM and ultrasonic sensors, integrating AI-powered image processing for real-time guidance and obstacle detection.", link: "" },
+      { title: "JoinHands - NGO & Volunteer Connect | Full-Stack Development", desc: "Built a scalable, AI-driven web platform using React, Supabase, and Node.js to streamline volunteer recruitment, secure donation processing, and automated event management.", link: "" },
+      { title: "What Makes Our Earth - 3D Virtual Exploration Website | Three.js, Blender", desc: "Developed immersive web-based AR/VR environments using Three.js, Unity, and Blender, featuring real-time 3D rendering and interactive scene navigation.", link: "" }
     ],
-    certifications: ["PowerBI and Data Analytics — L&T Edtech", "Cloud Computing AWS — AWS"],
+    certifications: ["PowerBI and Data Analytics - L&T Edtech", "Cloud Computing AWS - AWS"],
     email: "prajna.m@bcah.christuniversity.in",
     linkedin: "linkedin.com/prajna-madhu",
   },
@@ -498,10 +498,10 @@ export const students = [
     technicalSkills: [ "Excel (Advanced)", "Power BI", "Python", "SQL", "MS Word and PowerPoint", "HTML", "CSS", "Figma" ],
     professionalSkills: ["Teamwork and Collaboration", "Leadership and Initiative", "Emotional Intelligence", "Time Management", "Accountability", "Critical Thinking"],
     projects: [
-      { title: "AI-Driven Green Corridor for Emergency Vehicles — IoT, AI, Data Analysis", desc: "Developed an IoT-based traffic management system creating unobstructed corridors for emergency vehicles, collaborating with the Bengaluru Traffic Police Department to validate and deploy the solution.", link: "" },
-      { title: "Financial Management System — Kotlin", desc: "Developed a mobile app with a secure, intuitive interface for financial record keeping, implementing expense tracking, budget planning, and transaction management.", link: "" }
+      { title: "AI-Driven Green Corridor for Emergency Vehicles - IoT, AI, Data Analysis", desc: "Developed an IoT-based traffic management system creating unobstructed corridors for emergency vehicles, collaborating with the Bengaluru Traffic Police Department to validate and deploy the solution.", link: "" },
+      { title: "Financial Management System - Kotlin", desc: "Developed a mobile app with a secure, intuitive interface for financial record keeping, implementing expense tracking, budget planning, and transaction management.", link: "" }
     ],
-    certifications: ["Public Speaking — Swayam / NPTEL", "AWS Cloud Course — AWS", "Backend Development Course for APIs — L&T", "Internet of Things (IoT) Training — Infosys Springboard"],
+    certifications: ["Public Speaking - Swayam / NPTEL", "AWS Cloud Course - AWS", "Backend Development Course for APIs - L&T", "Internet of Things (IoT) Training - Infosys Springboard"],
     email: "pragya.mishra@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/pragya-mishra-a7658041b",
   },
@@ -516,11 +516,11 @@ export const students = [
     technicalSkills: [ "Python", "Java", "Kotlin", "JavaScript", "C#", "ReactJS", "Tailwind CSS", "Framer Motion", "Node.js", "Express.js", "Firebase (Firestore, Authentication)", "MongoDB", "AWS", "Git", "Android Studio" ],
     professionalSkills: ["Leadership", "Data Storytelling", "Problem Solving", "Cross-functional Collaboration", "Public Speaking", "Team Leadership", "Event Coordination", "Stakeholder Communication", "Organizational Planning"],
     projects: [
-      { title: "CampusCrave — ReactJS, Tailwind CSS, Node.js, Express.js, Firebase", desc: "Built a responsive web app to digitize campus food ordering, integrating Firebase Auth with OTP verification and Firestore for live menu and order tracking, deployed on Firebase Hosting.", link: "" },
-      { title: "BookYourShow — Kotlin, Android Studio", desc: "Built a Kotlin-based mobile app inspired by BookMyShow, enabling event browsing and ticket booking with fragments, intents, and multiple menus.", link: "" },
-      { title: "Cricket Swing Bat Analyzer — IoT, Tinkercad", desc: "Designed an IoT-based system using motion sensors to analyze cricket bat swings, delivering real-time feedback on swing speed and angle.", link: "" }
+      { title: "CampusCrave - ReactJS, Tailwind CSS, Node.js, Express.js, Firebase", desc: "Built a responsive web app to digitize campus food ordering, integrating Firebase Auth with OTP verification and Firestore for live menu and order tracking, deployed on Firebase Hosting.", link: "" },
+      { title: "BookYourShow - Kotlin, Android Studio", desc: "Built a Kotlin-based mobile app inspired by BookMyShow, enabling event browsing and ticket booking with fragments, intents, and multiple menus.", link: "" },
+      { title: "Cricket Swing Bat Analyzer - IoT, Tinkercad", desc: "Designed an IoT-based system using motion sensors to analyze cricket bat swings, delivering real-time feedback on swing speed and angle.", link: "" }
     ],
-    certifications: ["AWS Academy Cloud Foundations — AWS Academy Graduate", "Big Data 101 & Hands-on Supervised Machine Learning with Python — Infosys Springboard", "Transition from Kotlin Java Developer to Android Developer — Infosys Springboard (TechA)", "Data-Driven Storytelling and Visualization — L&T EduTech", "E-Business — NPTEL"],
+    certifications: ["AWS Academy Cloud Foundations - AWS Academy Graduate", "Big Data 101 & Hands-on Supervised Machine Learning with Python - Infosys Springboard", "Transition from Kotlin Java Developer to Android Developer - Infosys Springboard (TechA)", "Data-Driven Storytelling and Visualization - L&T EduTech", "E-Business - NPTEL"],
     email: "sukhmani.kaur@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/sukhmani-kaur-bhatia-66568b2ab",
   },
@@ -535,11 +535,11 @@ export const students = [
     technicalSkills: [ "Python", "JavaScript", "SQL", "HTML", "CSS", "GitHub", "VS Code", "LLM", "Microsoft Excel", "Power BI" ],
     professionalSkills: ["Team Leadership", "Cross-Functional Collaboration", "Logical Reasoning", "Strategic Decision-Making", "Crisis Management"],
     projects: [
-      { title: "BreakLoop — Mental Health Mobile Application | Kotlin, Android Studio", desc: "Developed an Android app enabling users to monitor screen time, maintain daily journals, and receive notifications for healthier digital habits, with local data storage and personalized notifications.", link: "" },
-      { title: "DeClutter — Waste Management Web Application | MERN Stack", desc: "Developed a full-stack platform managing metrics tracking, collection schedules, and administrative operations, engineering real-time analytics dashboards to monitor active workflows.", link: "" },
-      { title: "Envision Smart Specs — Assistive IoT Solution | Arduino, ESP32, Ultrasonic Sensors", desc: "Designed smart eyewear for visually impaired individuals to assist with navigation and obstacle detection, integrating ultrasonic sensors and an ESP32 camera module.", link: "" }
+      { title: "BreakLoop - Mental Health Mobile Application | Kotlin, Android Studio", desc: "Developed an Android app enabling users to monitor screen time, maintain daily journals, and receive notifications for healthier digital habits, with local data storage and personalized notifications.", link: "" },
+      { title: "DeClutter - Waste Management Web Application | MERN Stack", desc: "Developed a full-stack platform managing metrics tracking, collection schedules, and administrative operations, engineering real-time analytics dashboards to monitor active workflows.", link: "" },
+      { title: "Envision Smart Specs - Assistive IoT Solution | Arduino, ESP32, Ultrasonic Sensors", desc: "Designed smart eyewear for visually impaired individuals to assist with navigation and obstacle detection, integrating ultrasonic sensors and an ESP32 camera module.", link: "" }
     ],
-    certifications: ["Introduction to Python — Infosys Springboard", "Hands-On Machine Learning with Python — Infosys Springboard", "Excel Skills for Business — Coursera"],
+    certifications: ["Introduction to Python - Infosys Springboard", "Hands-On Machine Learning with Python - Infosys Springboard", "Excel Skills for Business - Coursera"],
     email: "sangeeta.arjunsingh@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/sangeeta-dhami-554ab932b",
   },
@@ -554,11 +554,11 @@ export const students = [
     technicalSkills: [ "C++", "JavaScript", "SQL", "MERN Stack", "REST APIs", "AWS (EC2, VPC, S3)", "MongoDB Atlas", "Solidity", "Hardhat", "Git", "GitHub", "Postman", "Figma" ],
     professionalSkills: ["Leadership", "Team Coordination", "Risk Management", "Cross-functional Collaboration", "Problem Solving"],
     projects: [
-      { title: "Trackless — Privacy-First Web Analytics | Node.js, Express, MongoDB, React, Tailwind CSS", desc: "Engineered a lightweight, cookie-free analytics platform serving 50+ client websites, processing 1,000+ daily events via a JS snippet, REST API, and developer dashboard as an ethical alternative to Google Analytics.", link: "" },
-      { title: "Mail Mind — AI Email Classification | Next.js, LangChain.js, OpenAI GPT-4o, Gmail API", desc: "Built an intelligent Gmail classifier processing 1,000+ emails/day, integrating GPT-4o via LangChain.js for context-aware batch classification, reducing manual inbox management by 60%.", link: "" },
+      { title: "Trackless - Privacy-First Web Analytics | Node.js, Express, MongoDB, React, Tailwind CSS", desc: "Engineered a lightweight, cookie-free analytics platform serving 50+ client websites, processing 1,000+ daily events via a JS snippet, REST API, and developer dashboard as an ethical alternative to Google Analytics.", link: "" },
+      { title: "Mail Mind - AI Email Classification | Next.js, LangChain.js, OpenAI GPT-4o, Gmail API", desc: "Built an intelligent Gmail classifier processing 1,000+ emails/day, integrating GPT-4o via LangChain.js for context-aware batch classification, reducing manual inbox management by 60%.", link: "" },
       { title: "AI-Powered Organic Product Verification | Solidity, Hardhat, React, Node.js", desc: "Fine-tuned EfficientNetB0 on 1,620 agricultural images for 91.4% validation accuracy, deploying tamper-proof Solidity smart contracts with SHA-256 hashing for on-chain product authenticity records.", link: "" }
     ],
-    certifications: ["AWS Academy Graduate — Cloud Foundations, AWS Academy", "Back-End Frameworks & APIs — L&T Edutech"],
+    certifications: ["AWS Academy Graduate - Cloud Foundations, AWS Academy", "Back-End Frameworks & APIs - L&T Edutech"],
     email: "allen.pinto@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/allen-pinto-63aa48303",
   },
@@ -575,9 +575,9 @@ export const students = [
     projects: [
       { title: "Email Automation System | Python, SMTP", desc: "Analyzed lead data and optimized CRM workflows through business analytics and reporting, integrating a WhatsApp API and automating workflows using Zapier, n8n, Calendly, and CRM tools.", link: "" },
       { title: "AI-Powered Health Prediction Website | Python, React.js, Supabase, Cursor AI", desc: "Built a website predicting diseases using an AI-powered agent supporting SDG initiatives, integrating a chatbot, psychologist recommendations, and doctor appointment booking for mental health support.", link: "" },
-      { title: "BiasScope — Multilingual Bias Detection | Python, Scikit-learn, IndicTrans", desc: "Preprocessed multilingual datasets using IndicTrans and Google Translate to identify bias patterns across Indian languages, implementing an NLP web application for gender bias detection and fairness visualization.", link: "" }
+      { title: "BiasScope - Multilingual Bias Detection | Python, Scikit-learn, IndicTrans", desc: "Preprocessed multilingual datasets using IndicTrans and Google Translate to identify bias patterns across Indian languages, implementing an NLP web application for gender bias detection and fairness visualization.", link: "" }
     ],
-    certifications: ["AWS Cloud Foundation Course — Google/Coursera", "NCFM – Equity Derivatives Module — NSE Academy", "Human Resource Management — UNI Athena"],
+    certifications: ["AWS Cloud Foundation Course - Google/Coursera", "NCFM – Equity Derivatives Module - NSE Academy", "Human Resource Management - UNI Athena"],
     email: "sri.harsha@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/sri-harsha-pitani-230b42a2",
   },
@@ -592,11 +592,11 @@ export const students = [
     technicalSkills: [ "Python", "SQL", "Excel", "Power BI", "Pandas", "Java", "HTML", "CSS", "JavaScript", "React.js", "Flask", "Streamlit" ],
     professionalSkills: ["Communication", "Team Collaboration", "Leadership", "Problem Solving", "Time Management", "Adaptability"],
     projects: [
-      { title: "Elevatr — AI-Powered Resume Analyzer & Career Guidance | Python, NLP, HTML, CSS", desc: "Developed an AI-powered platform applying NLP techniques to analyze resumes, extract skills, evaluate profiles, and generate personalized career recommendations.", link: "" },
+      { title: "Elevatr - AI-Powered Resume Analyzer & Career Guidance | Python, NLP, HTML, CSS", desc: "Developed an AI-powered platform applying NLP techniques to analyze resumes, extract skills, evaluate profiles, and generate personalized career recommendations.", link: "" },
       { title: "Healthcare Radiology Dashboard | Excel, SQL", desc: "Collected, cleaned, and validated healthcare data for accurate reporting, merging data from multiple sources into structured datasets to support radiology dashboard development.", link: "" },
       { title: "Full-Stack Web Platform | HTML, CSS, JavaScript, Bootstrap, Node.js, MySQL", desc: "Designed responsive web pages and developed backend APIs integrated with MySQL databases, collaborating within an Agile development environment.", link: "" }
     ],
-    certifications: ["Ethical Hacking — L&T EduTech", "Public Speaking — NPTEL SWAYAM", "Android App Development with Kotlin — Infosys Springboard"],
+    certifications: ["Ethical Hacking - L&T EduTech", "Public Speaking - NPTEL SWAYAM", "Android App Development with Kotlin - Infosys Springboard"],
     email: "charitha.venkatadri@christuniversity.in",
     linkedin: "www.linkedin.com/in/charitha-venkatadri",
   },
@@ -615,7 +615,7 @@ export const students = [
       { title: "Multimodal Medical Research Datasets | Research", desc: "Prepared multimodal datasets using existing medical field data and conducted fundamental ratio analysis as a Research Intern.", link: "" },
       { title: "Startup Website Design | UI/UX", desc: "Designed websites for a startup company as UI/UX Designer Head at CircleSpaces, Bengaluru.", link: "" }
     ],
-    certifications: ["Swayam Course — IoT 101, Big Data, Android App Development with Kotlin, Extended Reality", "Programming in C++ — G-TEC Computer Education", "Ethical Hacking Course — L&T EduTech"],
+    certifications: ["Swayam Course - IoT 101, Big Data, Android App Development with Kotlin, Extended Reality", "Programming in C++ - G-TEC Computer Education", "Ethical Hacking Course - L&T EduTech"],
     email: "karthik.sankar@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/karthik-sankar-r",
   },

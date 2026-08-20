@@ -21,7 +21,7 @@ const curriculum = [
 ]
 
 const facts = [
-  { icon: Trophy, num: '#1', label: 'in India for BCA — India Today' },
+  { icon: Trophy, num: '#1', label: 'in India for BCA, India Today' },
   { icon: ShieldCheck, num: 'A+', label: 'NAAC accredited university' },
   { icon: Users2, num: '95%', label: 'consistent placement rate' },
   { icon: CalendarClock, num: '4 yrs', label: '8 semesters, full-time, day scholar' },
@@ -60,7 +60,7 @@ export default function ProgramOverview() {
           <p className="program-body">
             Bachelor of Computer Applications (Honours) at CHRIST (Deemed to be University),
             Bangalore Yeshwanthpur Campus is a future-focused undergraduate programme designed
-            to develop skilled software professionals — pairing technical depth with ethical
+            to develop skilled software professionals, pairing technical depth with ethical
             grounding and real industry readiness, across eight semesters of full-time,
             English-medium study. Students can specialise through BCA Honours, BCA Honours with
             Research, or focused tracks in AI, Data Science, Cloud Computing, and Cybersecurity.
@@ -118,7 +118,7 @@ export default function ProgramOverview() {
       </motion.div>
 
       <p className="mono program-source">
-        Source: CHRIST (Deemed to be University) — Bangalore Yeshwanthpur Campus programme page; India Today BCA rankings.
+        Source: CHRIST (Deemed to be University), Bangalore Yeshwanthpur Campus programme page; India Today BCA rankings.
       </p>
     </section>
   )

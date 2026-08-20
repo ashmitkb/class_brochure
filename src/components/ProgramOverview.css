@@ -24,6 +24,9 @@
   line-height: 1.75;
   color: var(--text-ink-lo);
   max-width: 580px;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
 }
 
 .program-fact-grid {

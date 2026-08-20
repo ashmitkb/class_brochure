@@ -78,7 +78,7 @@ export default function StudentProfile({ student, onBack }) {
   const handleInquiryChange = (field) => (e) =>
     setInquiry((f) => ({ ...f, [field]: e.target.value }))
 
-  const inquirySubject = `Recruitment inquiry for ${activeStudent.name}${inquiry.company ? ` — ${inquiry.company}` : ''}`
+  const inquirySubject = `Recruitment inquiry for ${activeStudent.name}${inquiry.company ? ` (${inquiry.company})` : ''}`
   const inquiryBody =
     `From: ${inquiry.name}${inquiry.company ? ` (${inquiry.company})` : ''}\n` +
     `Reply-to: ${inquiry.email}\n\n${inquiry.message}`
@@ -349,7 +349,7 @@ export default function StudentProfile({ student, onBack }) {
                       className="profile-contact-send-wrap"
                     />
                     <p className="profile-contact-form-note">
-                      Pick your email provider — it opens pre-filled and addressed straight to {activeStudent.name}.
+                      Pick your email provider. It opens pre-filled and addressed straight to {activeStudent.name}.
                     </p>
                   </form>
                 ) : (

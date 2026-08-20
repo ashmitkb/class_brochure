@@ -31,7 +31,7 @@ export default function PlacementEnquiry() {
 
         <MailChooser
           to={PLACEMENTS_EMAIL}
-          subject="Placement Enquiry — Department of Computer Science"
+          subject="Placement Enquiry: Department of Computer Science"
           label={PLACEMENTS_EMAIL}
           icon={Mail}
           className="enquiry-mail"

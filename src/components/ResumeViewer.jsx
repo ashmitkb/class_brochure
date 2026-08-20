@@ -101,7 +101,7 @@ export default function ResumeViewer({ url, title }) {
       )}
       {status === 'error' && (
         <p className="resume-viewer-status resume-viewer-status-error">
-          Couldn't preview this resume inline — use Download or open it in a new tab instead.
+          Couldn't preview this resume inline. Use Download or open it in a new tab instead.
         </p>
       )}
       <div className="resume-viewer-pages" ref={containerRef} />

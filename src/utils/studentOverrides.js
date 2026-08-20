@@ -23,7 +23,7 @@ export const EDIT_PASSWORD = '7BCA1234'
 export function saveOverride(studentId, data) {
   if (!firebaseReady || !db) {
     return Promise.reject(
-      new Error('The database isn’t configured yet (missing Firebase env vars) — this edit can’t be saved.')
+      new Error('The database isn’t configured yet (missing Firebase env vars), so this edit can’t be saved.')
     )
   }
   return setDoc(doc(db, COLLECTION, studentId), data, { merge: true })

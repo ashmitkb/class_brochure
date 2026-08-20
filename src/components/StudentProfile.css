@@ -312,6 +312,9 @@
   font-size: 16px;
   line-height: 1.7;
   color: #2b323d;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
 }
 
 .profile-skills-grid {

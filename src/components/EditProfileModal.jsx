@@ -84,7 +84,7 @@ export default function EditProfileModal({ student, onClose, onSaved }) {
       .then(() => onSaved())
       .catch((err) => {
         setSaving(false)
-        setSaveError(err.message || 'Could not save — check your connection and try again.')
+        setSaveError(err.message || 'Could not save. Check your connection and try again.')
       })
   }
 
@@ -142,7 +142,7 @@ export default function EditProfileModal({ student, onClose, onSaved }) {
               )}
 
               <p className="edit-modal-note">
-                Saved changes are visible to everyone who visits the site —
+                Saved changes are visible to everyone who visits the site,
                 not just this browser. There's no real login behind this
                 though (just this shared password), so treat it as a soft
                 gate rather than a guarantee only you can edit your profile.

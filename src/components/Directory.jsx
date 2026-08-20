@@ -133,10 +133,10 @@ export default function Directory({ onSelectStudent }) {
       </div>
 
       {filtered.length === 0 && favoritesOnly && (
-        <p className="directory-empty">No favorites yet — click the star on a card to shortlist someone.</p>
+        <p className="directory-empty">No favorites yet. Click the star on a card to shortlist someone.</p>
       )}
       {filtered.length === 0 && !favoritesOnly && (
-        <p className="directory-empty">No one matches that search yet — try a different skill or name.</p>
+        <p className="directory-empty">No one matches that search yet. Try a different skill or name.</p>
       )}
     </section>
   )
