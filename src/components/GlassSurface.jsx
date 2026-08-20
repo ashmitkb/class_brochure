@@ -1,119 +1,189 @@
-import { useEffect, useId, useRef, useState } from 'react'
-import './GlassSurface.css'
-
-// A simplified recreation of the react-bits GlassSurface component:
-// draws a rounded-rect displacement map to a canvas (bright at the edges,
-// flat in the middle) and feeds it through an SVG feDisplacementMap so the
-// backdrop actually bends near the border like real glass, instead of a
-// flat CSS blur. Falls back to plain backdrop-blur if the browser can't
-// build the map (SSR, older Safari, etc).
-export default function GlassSurface({
+import { useEffect, useState, useRef, useId } from 'react';
+import './GlassSurface.css';
+const GlassSurface = ({
   children,
-  width = '100%',
-  height = '100%',
-  borderRadius = 24,
-  displace = 0.5,
-  distortionScale = -140,
+  width = 200,
+  height = 80,
+  borderRadius = 20,
+  borderWidth = 0.07,
   brightness = 50,
-  opacity = 0.9,
-  mixBlendMode = 'screen',
+  opacity = 0.93,
+  blur = 11,
+  displace = 0,
+  backgroundOpacity = 0,
+  saturation = 1,
+  distortionScale = -180,
+  redOffset = 0,
+  greenOffset = 10,
+  blueOffset = 20,
+  xChannel = 'R',
+  yChannel = 'G',
+  mixBlendMode = 'difference',
   className = '',
-  style = {},
-}) {
-  const rawId = useId().replace(/[:]/g, '')
-  const filterId = `glass-filter-${rawId}`
-  const containerRef = useRef(null)
-  const [mapUrl, setMapUrl] = useState('')
-
+  style = {}
+}) => {
+  const uniqueId = useId().replace(/:/g, '-');
+  const filterId = `glass-filter-${uniqueId}`;
+  const redGradId = `red-grad-${uniqueId}`;
+  const blueGradId = `blue-grad-${uniqueId}`;
+  const [svgSupported, setSvgSupported] = useState(false);
+  const containerRef = useRef(null);
+  const feImageRef = useRef(null);
+  const redChannelRef = useRef(null);
+  const greenChannelRef = useRef(null);
+  const blueChannelRef = useRef(null);
+  const gaussianBlurRef = useRef(null);
+  const generateDisplacementMap = () => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    const actualWidth = rect?.width || 400;
+    const actualHeight = rect?.height || 200;
+    const edgeSize = Math.min(actualWidth, actualHeight) * (borderWidth * 0.5);
+    const svgContent = `
+      <svg viewBox="0 0 ${actualWidth} ${actualHeight}" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="${redGradId}" x1="100%" y1="0%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#0000"/>
+            <stop offset="100%" stop-color="red"/>
+          </linearGradient>
+          <linearGradient id="${blueGradId}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0000"/>
+            <stop offset="100%" stop-color="blue"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" fill="black"></rect>
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#${redGradId})" />
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#${blueGradId})" style="mix-blend-mode: ${mixBlendMode}" />
+        <rect x="${edgeSize}" y="${edgeSize}" width="${actualWidth - edgeSize * 2}" height="${actualHeight - edgeSize * 2}" rx="${borderRadius}" fill="hsl(0 0% ${brightness}% / ${opacity})" style="filter:blur(${blur}px)" />
+      </svg>
+    `;
+    return `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
+  };
+  const updateDisplacementMap = () => {
+    feImageRef.current?.setAttribute('href', generateDisplacementMap());
+  };
   useEffect(() => {
-    const el = containerRef.current
-    if (!el || typeof document === 'undefined') return
-
-    const build = () => {
-      const w = Math.max(1, el.clientWidth)
-      const h = Math.max(1, el.clientHeight)
-      const canvas = document.createElement('canvas')
-      canvas.width = w
-      canvas.height = h
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
-
-      const r = Math.min(typeof borderRadius === 'number' ? borderRadius : 24, w / 2, h / 2)
-
-      ctx.fillStyle = '#808080'
-      ctx.fillRect(0, 0, w, h)
-
-      ctx.save()
-      ctx.beginPath()
-      ctx.moveTo(r, 0)
-      ctx.arcTo(w, 0, w, h, r)
-      ctx.arcTo(w, h, 0, h, r)
-      ctx.arcTo(0, h, 0, 0, r)
-      ctx.arcTo(0, 0, w, 0, r)
-      ctx.closePath()
-      ctx.clip()
-
-      const grad = ctx.createLinearGradient(0, 0, 0, h)
-      grad.addColorStop(0, '#ffffff')
-      grad.addColorStop(0.15, '#808080')
-      grad.addColorStop(0.85, '#808080')
-      grad.addColorStop(1, '#202020')
-      ctx.fillStyle = grad
-      ctx.fillRect(0, 0, w, h)
-      ctx.restore()
-
-      setMapUrl(canvas.toDataURL())
+    updateDisplacementMap();
+    [
+      { ref: redChannelRef, offset: redOffset },
+      { ref: greenChannelRef, offset: greenOffset },
+      { ref: blueChannelRef, offset: blueOffset }
+    ].forEach(({ ref, offset }) => {
+      if (ref.current) {
+        ref.current.setAttribute('scale', (distortionScale + offset).toString());
+        ref.current.setAttribute('xChannelSelector', xChannel);
+        ref.current.setAttribute('yChannelSelector', yChannel);
+      }
+    });
+    gaussianBlurRef.current?.setAttribute('stdDeviation', displace.toString());
+  }, [
+    width,
+    height,
+    borderRadius,
+    borderWidth,
+    brightness,
+    opacity,
+    blur,
+    displace,
+    distortionScale,
+    redOffset,
+    greenOffset,
+    blueOffset,
+    xChannel,
+    yChannel,
+    mixBlendMode
+  ]);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const resizeObserver = new ResizeObserver(() => {
+      setTimeout(updateDisplacementMap, 0);
+    });
+    resizeObserver.observe(containerRef.current);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+  useEffect(() => {
+    setTimeout(updateDisplacementMap, 0);
+  }, [width, height]);
+  useEffect(() => {
+    setSvgSupported(supportsSVGFilters());
+  }, []);
+  const supportsSVGFilters = () => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return false;
     }
-
-    build()
-    const ro = new ResizeObserver(build)
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [borderRadius])
-
+    const isWebkit = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+    const isFirefox = /Firefox/.test(navigator.userAgent);
+    if (isWebkit || isFirefox) {
+      return false;
+    }
+    const div = document.createElement('div');
+    div.style.backdropFilter = `url(#${filterId})`;
+    return div.style.backdropFilter !== '';
+  };
+  const containerStyle = {
+    ...style,
+    width: typeof width === 'number' ? `${width}px` : width,
+    height: typeof height === 'number' ? `${height}px` : height,
+    borderRadius: `${borderRadius}px`,
+    '--glass-frost': backgroundOpacity,
+    '--glass-saturation': saturation,
+    '--filter-id': `url(#${filterId})`
+  };
   return (
     <div
       ref={containerRef}
-      className={`glass-surface ${className}`}
-      style={{ width, height, borderRadius, ...style }}
+      className={`glass-surface ${svgSupported ? 'glass-surface--svg' : 'glass-surface--fallback'} ${className}`}
+      style={containerStyle}
     >
-      {mapUrl && (
-        <svg className="glass-surface-defs" aria-hidden="true">
-          <filter id={filterId} colorInterpolationFilters="sRGB">
-            <feImage href={mapUrl} x="0" y="0" width="100%" height="100%" result="map" />
+      <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id={filterId} colorInterpolationFilters="sRGB" x="0%" y="0%" width="100%" height="100%">
+            <feImage ref={feImageRef} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />
+            <feDisplacementMap ref={redChannelRef} in="SourceGraphic" in2="map" id="redchannel" result="dispRed" />
+            <feColorMatrix
+              in="dispRed"
+              type="matrix"
+              values="1 0 0 0 0
+                      0 0 0 0 0
+                      0 0 0 0 0
+                      0 0 0 1 0"
+              result="red"
+            />
             <feDisplacementMap
+              ref={greenChannelRef}
               in="SourceGraphic"
               in2="map"
-              scale={distortionScale}
-              xChannelSelector="R"
-              yChannelSelector="R"
-              result="disp"
+              id="greenchannel"
+              result="dispGreen"
             />
-            <feGaussianBlur in="disp" stdDeviation={displace} />
-            <feComponentTransfer>
-              <feFuncR type="linear" slope={brightness / 50} />
-              <feFuncG type="linear" slope={brightness / 50} />
-              <feFuncB type="linear" slope={brightness / 50} />
-            </feComponentTransfer>
+            <feColorMatrix
+              in="dispGreen"
+              type="matrix"
+              values="0 0 0 0 0
+                      0 1 0 0 0
+                      0 0 0 0 0
+                      0 0 0 1 0"
+              result="green"
+            />
+            <feDisplacementMap ref={blueChannelRef} in="SourceGraphic" in2="map" id="bluechannel" result="dispBlue" />
+            <feColorMatrix
+              in="dispBlue"
+              type="matrix"
+              values="0 0 0 0 0
+                      0 0 0 0 0
+                      0 0 1 0 0
+                      0 0 0 1 0"
+              result="blue"
+            />
+            <feBlend in="red" in2="green" mode="screen" result="rg" />
+            <feBlend in="rg" in2="blue" mode="screen" result="output" />
+            <feGaussianBlur ref={gaussianBlurRef} in="output" stdDeviation="0.7" />
           </filter>
-        </svg>
-      )}
-
-      <div
-        className="glass-surface-clip"
-        style={{ borderRadius }}
-      >
-        <div
-          className="glass-surface-backdrop"
-          style={{
-            opacity,
-            mixBlendMode,
-            filter: mapUrl ? `url(#${filterId})` : undefined,
-          }}
-        />
-        <div className="glass-surface-sheen" />
-      </div>
-      <div className="glass-surface-content">{children}</div>
+        </defs>
+      </svg>
+      <div className="glass-surface__content">{children}</div>
     </div>
-  )
-}
+  );
+};
+export default GlassSurface;

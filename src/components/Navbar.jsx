@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { classInfo } from '../data/students'
+import GlassSurface from './GlassSurface'
 import './Navbar.css'
 
 const links = [
@@ -40,51 +41,75 @@ export default function Navbar() {
           plain layout property — no transform anywhere in the chain, so
           the blur actually samples the real page behind it. */}
       <div className="glass-nav-wrap">
-        <motion.header
-          className={`glass-nav ${scrolled ? 'scrolled' : ''}`}
+        <motion.div
+          className="glass-nav-motion"
           initial={{ marginTop: -40, opacity: 0 }}
           animate={{ marginTop: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <a href="#top" className="glass-nav-brand">
-            {/* import.meta.env.BASE_URL, not a hardcoded "/", so this still
-                resolves once vite.config.js sets a base path for GitHub
-                Pages (a plain "/christ-logo.png" 404s under a project-page
-                base like /class_brochure/). */}
-            <img
-              src={`${import.meta.env.BASE_URL}christ-logo.png`}
-              alt="Christ University"
-              className="glass-nav-logo"
-            />
-            <span className="glass-nav-brand-text">
-              <span className="mono glass-nav-brand-sub">BATCH {classInfo.batch}</span>
-            </span>
-          </a>
-
-          <nav className="glass-nav-links">
-            {links.map((l) => (
-              <a key={l.label} href={l.href}>{l.label}</a>
-            ))}
-          </nav>
-
-          <motion.a
-            href="#directory"
-            className="glass-nav-cta"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ duration: 0.15 }}
+          {/* Real react-bits GlassSurface: an SVG feDisplacementMap built
+              from a live per-pixel edge map, so the backdrop actually bends
+              near the pill's border like real glass instead of a flat CSS
+              blur. color-scheme: dark is forced on it in Navbar.css so its
+              light-dark() frost always resolves to the dark tint — this
+              pill sits over a dark hero photo or a light page either way,
+              and light nav text needs a dark backdrop to stay legible. */}
+          <GlassSurface
+            className={`navbar-glass ${scrolled ? 'scrolled' : ''}`}
+            width="100%"
+            height="auto"
+            borderRadius={999}
+            backgroundOpacity={scrolled ? 0.6 : 0.12}
+            brightness={scrolled ? 22 : 58}
+            opacity={0.92}
+            blur={scrolled ? 22 : 18}
+            displace={1.4}
+            distortionScale={-32}
+            greenOffset={2}
+            blueOffset={4}
           >
-            Meet the Class
-          </motion.a>
+            <header className="glass-nav-inner">
+              <a href="#top" className="glass-nav-brand">
+                {/* import.meta.env.BASE_URL, not a hardcoded "/", so this still
+                    resolves once vite.config.js sets a base path for GitHub
+                    Pages (a plain "/christ-logo.png" 404s under a project-page
+                    base like /class_brochure/). */}
+                <img
+                  src={`${import.meta.env.BASE_URL}christ-logo.png`}
+                  alt="Christ University"
+                  className="glass-nav-logo"
+                />
+                <span className="glass-nav-brand-text">
+                  <span className="mono glass-nav-brand-sub">BATCH {classInfo.batch}</span>
+                </span>
+              </a>
 
-          <button
-            className="glass-nav-burger"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu size={20} />
-          </button>
-        </motion.header>
+              <nav className="glass-nav-links">
+                {links.map((l) => (
+                  <a key={l.label} href={l.href}>{l.label}</a>
+                ))}
+              </nav>
+
+              <motion.a
+                href="#directory"
+                className="glass-nav-cta"
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.15 }}
+              >
+                Meet the Class
+              </motion.a>
+
+              <button
+                className="glass-nav-burger"
+                onClick={() => setMenuOpen(true)}
+                aria-label="Open menu"
+              >
+                <Menu size={20} />
+              </button>
+            </header>
+          </GlassSurface>
+        </motion.div>
       </div>
 
       <AnimatePresence>

@@ -9,34 +9,40 @@
   pointer-events: none;
 }
 
-.glass-nav {
+.glass-nav-motion {
   pointer-events: auto;
-  width: min(1120px, 92vw);
+  width: min(1180px, 94vw);
+}
+
+/* GlassSurface's own SVG refraction + blur now carries the "glass" look
+   (see GlassSurface.jsx/css) — this pill no longer sets its own
+   background/backdrop-filter directly. color-scheme: dark is forced here
+   so GlassSurface's internal light-dark() frost tint always resolves to
+   the dark/black variant instead of white: the component has no separate
+   "brand color" knob, and dark frost is the closer match to the original
+   navy pill, plus it's what keeps the light nav text legible whether the
+   pill is sitting over the dark hero photo or, once scrolled, the light
+   page background. */
+.navbar-glass {
+  color-scheme: dark;
+}
+
+/* GlassSurface's own content wrapper centers a single child with its own
+   padding — .glass-nav-inner below supplies the real row layout, so this
+   just needs to get out of the way and hand over the full pill. */
+.navbar-glass .glass-surface__content {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glass-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 10px 12px 10px 16px;
-  border-radius: 999px;
-
-  /* This tint carries the "glass" look on its own — backdrop-filter blur
-     is layered on top as a bonus for browsers/GPUs where it actually
-     renders, but plenty of real-world setups (some Windows GPU/driver
-     combos, RDP/VM sessions, hardware-accel disabled) silently fail to
-     render backdrop-filter at all, leaving only whatever the background
-     itself provides. A faint ~10% tint was invisible in that case; this
-     is opaque enough to read as a deliberate panel either way. */
-  background: linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.1));
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 8px 28px rgba(11,37,69,0.28), inset 0 1px 0 rgba(255,255,255,0.28);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-nav.scrolled {
-  background: linear-gradient(135deg, rgba(11,37,69,0.82), rgba(11,37,69,0.68));
-  border-color: rgba(255,255,255,0.16);
+  gap: 26px;
+  padding: 16px 22px;
+  width: 100%;
 }
 
 .glass-nav-brand {
@@ -52,9 +58,9 @@
    crop on a real (often wide/rectangular) university logo. No background
    card behind it; it sits directly on the glass. */
 .glass-nav-logo {
-  height: 34px;
+  height: 38px;
   width: auto;
-  max-width: 150px;
+  max-width: 170px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -79,7 +85,7 @@
 
 .glass-nav-links {
   display: none;
-  gap: 26px;
+  gap: 32px;
 }
 
 .glass-nav-links a {
@@ -114,7 +120,7 @@
   color: var(--ink);
   font-size: 13px;
   font-weight: 600;
-  padding: 9px 18px;
+  padding: 11px 22px;
   border-radius: 999px;
   white-space: nowrap;
 }
