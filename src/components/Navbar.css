@@ -27,6 +27,29 @@
   color-scheme: dark;
 }
 
+/* GlassSurface deliberately disables its SVG refraction on Safari/Firefox
+   (see supportsSVGFilters() in GlassSurface.jsx) and falls back to a
+   plain frosted-glass look instead — but that fallback is hardcoded to a
+   white tint (`.glass-surface--fallback` in GlassSurface.css) and ignores
+   every prop we pass in, including our forced color-scheme: dark. On
+   iOS (Safari, and Chrome/Firefox-on-iOS, which all report a Safari-style
+   user agent) that's what was showing up as a stark white bar instead of
+   the dark glass pill. This overrides the fallback specifically for our
+   navbar so it matches the same navy-dark look, and still reacts to the
+   scrolled state even without the SVG effect running. */
+.navbar-glass.glass-surface--fallback {
+  background: rgba(11, 37, 69, 0.4);
+  backdrop-filter: blur(16px) saturate(160%) brightness(0.94);
+  -webkit-backdrop-filter: blur(16px) saturate(160%) brightness(0.94);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 28px rgba(11, 37, 69, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  transition: background 0.3s ease;
+}
+
+.navbar-glass.glass-surface--fallback.scrolled {
+  background: rgba(11, 37, 69, 0.76);
+}
+
 /* GlassSurface's own content wrapper centers a single child with its own
    padding — .glass-nav-inner below supplies the real row layout, so this
    just needs to get out of the way and hand over the full pill. */
