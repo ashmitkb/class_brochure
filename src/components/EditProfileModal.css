@@ -103,6 +103,36 @@
   box-shadow: 0 0 0 3px rgba(176, 141, 69, 0.15);
 }
 
+.edit-field input[type="file"] {
+  padding: 9px 10px;
+  font-size: 13px;
+  color: var(--text-ink-lo);
+}
+
+.edit-field input[type="file"]::file-selector-button {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(11, 37, 69, 0.08);
+  border: none;
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-field input[type="file"]::file-selector-button:hover {
+  background: rgba(11, 37, 69, 0.14);
+}
+
+.edit-modal-note-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .edit-modal-error {
   display: flex;
   align-items: flex-start;

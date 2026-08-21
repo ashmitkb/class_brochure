@@ -619,4 +619,43 @@ export const students = [
     email: "karthik.sankar@bcah.christuniversity.in",
     linkedin: "linkedin.com/in/karthik-sankar-r",
   },
+  {
+    id: 'stu-034',
+    name: "Archit Raj",
+    photo: "students/stu-034.jpg",
+    resumeFile: "resumes/stu-034.pdf",
+    tagline: "AR/VR developer & game systems builder",
+    bio: "Tech-driven BCA (Honours) student with a solid foundation in programming, database management, and software development, alongside a keen interest in 3D modelling, animation, and building AR/VR game experiences with Unity and Unreal Engine. Brings hands-on internship experience across Android app development and full-stack CRM systems, with a strong passion for emerging technologies.",
+    priorEducation: "Class XII, Espee Global School, Bengaluru",
+    technicalSkills: [ "Python", "Linux", "C#", "Kotlin", "XML", "React", "Next.js", "Node.js", "PostgreSQL", "Prisma", "SQLite", "Docker", "Android Studio", "Arduino" ],
+    professionalSkills: ["Leadership", "Data Storytelling", "Problem Solving", "Cross-functional Collaboration", "Public Speaking"],
+    projects: [
+      { title: "CHRIST Metis Lab Access & Management Portal | Python, HTML, CSS, JS, SQLite", desc: "Developed a website portal allowing user registration and login for college students, staff, and external users to register and access the college Lab.", link: "" },
+      { title: "ESP-32 Marauder (DIY) | Python, Arduino", desc: "Built an ESP-32 Marauder using embedded systems, enabling scanning of wireless networks and Bluetooth devices.", link: "" },
+      { title: "ERP Mobile Application | Kotlin, XML, Android Studio, Docker", desc: "Designed and developed an ERP mobile application for internal company operations at Bharuva Solutions, using Docker for containerized deployment across development and production.", link: "" },
+      { title: "Event Organizer CRM System | React, Next.js, Node.js, PostgreSQL, Prisma", desc: "Built a scalable event organizer CRM system at HighApe, with a full-stack architecture using React/Next.js on the frontend, Node.js RESTful APIs, and a PostgreSQL database managed via Prisma ORM.", link: "" }
+    ],
+    certifications: ["Foundations in Cybersecurity - Google/Coursera", "Ethical Hacking - L&T EduTech", "Android App Development with Kotlin - Infosys Springboard", "Technovation Internship Program - IBM SkillBuild"],
+    email: "archit.raj@bcah.christuniversity.in",
+    linkedin: "linkedin.com/in/archit-raj-22",
+  },
+  {
+    id: 'stu-035',
+    name: "Tristen Dsouza",
+    photo: "students/stu-035.jpg",
+    resumeFile: "resumes/stu-035.pdf",
+    tagline: "Software developer & IT support specialist",
+    bio: "BCA student with internship experience in digital infrastructure and IT support, resolving hardware, software, and network issues for end users while gaining hands-on exposure to Active Directory and enterprise ticketing systems. Has built independent development projects spanning .NET, Kotlin, and AI-powered dashboards, and is seeking a full-time or internship role in software development or embedded systems.",
+    priorEducation: "Class XII, Shantiniketan Indian School, Qatar",
+    technicalSkills: [ "C", "C++", "Java", "Kotlin", "Python", "HTML", "CSS", "JavaScript", "PHP", "React", "Node.js", "Firebase", "MySQL", "Git" ],
+    professionalSkills: ["Teamwork and Collaboration", "Problem Solving", "Adaptability", "Communication"],
+    projects: [
+      { title: "Water Scarcity Dashboard | AI, Satellite Data", desc: "Developed an AI-powered dashboard that monitors water data, predicts shortages, and delivers timely updates through satellite maps and SMS alerts for rural farmers and urban users.", link: "" },
+      { title: "WorkForge | .NET", desc: "Built an employee record system in .NET, improving data access and processing speed by 10%.", link: "" },
+      { title: "Streaming Application | Kotlin, Firebase", desc: "Developed a Kotlin-Firebase streaming app with authentication and NoSQL data storage.", link: "" }
+    ],
+    certifications: ["Android Development & Machine Learning: Kotlin, Java, Python - Infosys SpringBoard", "Deep Learning: Keras, R, Neural Networks - Infosys SpringBoard", "Cybersecurity - L&T Ethical Hacking"],
+    email: "criticaltristen32@gmail.com",
+    linkedin: "",
+  },
 ]

@@ -73,7 +73,11 @@ export default function StudentProfile({ student, onBack }) {
     })
   }
 
-  const resumeUrl = activeStudent.resumeFile ? assetUrl(activeStudent.resumeFile) : null
+  // A self-uploaded resume (see EditProfileModal/cloudinary.js) lands as a
+  // Cloudinary URL in resumeUrl via the Firestore override — that always
+  // wins over the resume bundled into the build, since it's the newer one.
+  const resumeUrl = activeStudent.resumeUrl
+    || (activeStudent.resumeFile ? assetUrl(activeStudent.resumeFile) : null)
 
   const handleInquiryChange = (field) => (e) =>
     setInquiry((f) => ({ ...f, [field]: e.target.value }))

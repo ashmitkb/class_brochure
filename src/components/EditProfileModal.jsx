@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Lock, Pencil, TriangleAlert } from 'lucide-react'
+import { X, Lock, Pencil, TriangleAlert, FileText } from 'lucide-react'
 import { EDIT_PASSWORD, saveOverride } from '../utils/studentOverrides'
+import { isPdfFile, MAX_RESUME_BYTES, uploadResume } from '../utils/cloudinary'
 import './EditProfileModal.css'
 
 const splitList = (text) =>
@@ -29,6 +30,8 @@ export default function EditProfileModal({ student, onClose, onSaved }) {
   const [loginError, setLoginError] = useState('')
   const [saving, setSaving] = useState(false)
   const [saveError, setSaveError] = useState('')
+  const [resumeFile, setResumeFile] = useState(null)
+  const [resumeFileError, setResumeFileError] = useState('')
 
   const [form, setForm] = useState(() => ({
     tagline: student.tagline || '',
@@ -61,31 +64,59 @@ export default function EditProfileModal({ student, onClose, onSaved }) {
 
   const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }))
 
-  const handleSave = (e) => {
-    e.preventDefault()
-    const data = {
-      tagline: form.tagline.trim(),
-      bio: form.bio.trim(),
-      priorEducation: form.priorEducation.trim(),
-      technicalSkills: splitList(form.technicalSkills),
-      professionalSkills: splitList(form.professionalSkills),
-      certifications: splitLines(form.certifications),
-      projects: parseProjects(form.projects),
-      email: form.email.trim(),
-      linkedin: form.linkedin.trim(),
-      github: form.github.trim(),
+  const handleResumeFileChange = (e) => {
+    const file = e.target.files?.[0] || null
+    setResumeFileError('')
+    if (!file) {
+      setResumeFile(null)
+      return
     }
+    if (!isPdfFile(file)) {
+      setResumeFileError('Please choose a PDF file.')
+      e.target.value = ''
+      setResumeFile(null)
+      return
+    }
+    if (file.size > MAX_RESUME_BYTES) {
+      setResumeFileError('That file is too large. Please keep it under 10MB.')
+      e.target.value = ''
+      setResumeFile(null)
+      return
+    }
+    setResumeFile(file)
+  }
+
+  const handleSave = async (e) => {
+    e.preventDefault()
     setSaving(true)
     setSaveError('')
-    // Writes to Firestore (see studentOverrides.js) — the profile page's
-    // own live subscription picks the change back up and re-renders, so
-    // there's nothing to do here on success besides closing the modal.
-    saveOverride(student.id, data)
-      .then(() => onSaved())
-      .catch((err) => {
-        setSaving(false)
-        setSaveError(err.message || 'Could not save. Check your connection and try again.')
-      })
+    try {
+      // Only touch resumeUrl when a new file was actually picked — leaving
+      // it out of `data` means Firestore's merge write (see saveOverride)
+      // keeps whatever resume link, if any, was already saved.
+      const resumeUrl = resumeFile ? await uploadResume(resumeFile) : undefined
+      const data = {
+        tagline: form.tagline.trim(),
+        bio: form.bio.trim(),
+        priorEducation: form.priorEducation.trim(),
+        technicalSkills: splitList(form.technicalSkills),
+        professionalSkills: splitList(form.professionalSkills),
+        certifications: splitLines(form.certifications),
+        projects: parseProjects(form.projects),
+        email: form.email.trim(),
+        linkedin: form.linkedin.trim(),
+        github: form.github.trim(),
+        ...(resumeUrl ? { resumeUrl } : {}),
+      }
+      // Writes to Firestore (see studentOverrides.js) — the profile page's
+      // own live subscription picks the change back up and re-renders, so
+      // there's nothing to do here on success besides closing the modal.
+      await saveOverride(student.id, data)
+      onSaved()
+    } catch (err) {
+      setSaving(false)
+      setSaveError(err.message || 'Could not save. Check your connection and try again.')
+    }
   }
 
   return (
@@ -208,12 +239,25 @@ export default function EditProfileModal({ student, onClose, onSaved }) {
                 <input value={form.github} onChange={update('github')} />
               </label>
 
+              <label className="edit-field">
+                <span>Update resume (PDF, optional)</span>
+                <input type="file" accept="application/pdf,.pdf" onChange={handleResumeFileChange} />
+              </label>
+              {resumeFileError && (
+                <p className="edit-modal-error"><TriangleAlert size={14} /> {resumeFileError}</p>
+              )}
+              {resumeFile && !resumeFileError && (
+                <p className="edit-modal-note edit-modal-note-file">
+                  <FileText size={14} /> {resumeFile.name} will replace your current resume when you save.
+                </p>
+              )}
+
               {saveError && (
                 <p className="edit-modal-error"><TriangleAlert size={14} /> {saveError}</p>
               )}
 
               <button type="submit" className="edit-modal-submit" disabled={saving}>
-                {saving ? 'Saving…' : 'Save changes'}
+                {saving ? (resumeFile ? 'Uploading…' : 'Saving…') : 'Save changes'}
               </button>
             </form>
           )}
