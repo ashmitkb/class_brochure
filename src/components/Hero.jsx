@@ -53,7 +53,7 @@ export default function Hero() {
           animate="show"
           variants={fadeUp}
         >
-          Meet the class.
+          
         </motion.p>
       </div>
 

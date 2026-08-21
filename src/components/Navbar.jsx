@@ -97,7 +97,7 @@ export default function Navbar() {
                 whileTap={{ scale: 0.96 }}
                 transition={{ duration: 0.15 }}
               >
-                Meet the Class
+                View Student Directory
               </motion.a>
 
               <button
