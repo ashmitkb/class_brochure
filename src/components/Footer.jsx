@@ -2,9 +2,9 @@ import { MapPin, Phone, Mail } from 'lucide-react'
 import './Footer.css'
 
 const contacts = [
-  { name: 'Dr. Vinay M', phone: '+91 99863 88234', email: 'vinay.m@christuniversity.in' },
-  { name: 'Dr. Balakrishnan C', phone: '+91 98657 82529', email: 'balakrishnan.c@christuniversity.in' },
   { name: 'Dr. Sindhu V', phone: '+91 97155 52225', email: 'sindhu.v@christuniversity.in' },
+  { name: 'Dr. Balakrishnan C', phone: '+91 98657 82529', email: 'balakrishnan.c@christuniversity.in' },
+  { name: 'Dr. Vinay M', phone: '+91 99863 88234', email: 'vinay.m@christuniversity.in' },
 ]
 
 const CAMPUS_MAP_URL = 'https://www.google.com/maps/search/?api=1&query=Christ+University+Yeshwanthpur+Campus+Bengaluru'
